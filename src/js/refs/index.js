@@ -31,6 +31,8 @@ const refs = {
   headerContainer: document.querySelector('.header-container-js'),
   libraryContainer: document.querySelector('.library__section-list'),
   mainWrapper: document.querySelector('.main__section-wrapper'),
+  glide: document.querySelector('.js-trending'),
+  filmCards: document.querySelector('.js-film-cards'),
 };
 
 export default refs;

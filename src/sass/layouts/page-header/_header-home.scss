@@ -3,6 +3,8 @@
   background-repeat: no-repeat;
   background-position: center;
   background-color: var(--grey-900);
+
+  margin-bottom: 20px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
     url(../img/header-home/bg-img-mob.jpg);
 
@@ -16,6 +18,7 @@
   @media screen and (min-width: $tablet) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../img/header-home/bg-img-tablet.jpg);
+        margin-bottom: 59px;
 
     @media screen and (min-device-pixel-ratio: 2),
       screen and (min-resolution: 192dpi),
@@ -28,6 +31,7 @@
   @media screen and (min-width: $desktop) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../img/header-home/bg-img-desktop.jpg);
+    margin-bottom: 60px;
   }
 
   @media screen and (min-device-pixel-ratio: 2),
