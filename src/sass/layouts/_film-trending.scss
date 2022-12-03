@@ -1,0 +1,56 @@
+.film-trending__cards{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    justify-content: center;
+    @include tablet{
+        gap: 32px;
+    }
+    @include desktop{
+        gap:16px;
+    }
+
+}
+
+.glide__slide{
+    width: 280px;
+    height: 163px;
+}
+
+.film-trending__item{
+    margin-bottom: 20px;
+    @include font(500, 12px, 1.17);
+
+    width: 100%;
+    
+        @media screen and (min-width: 768px) {
+            width: calc((100% - 32px) / 2);
+            margin-bottom: 0;
+        }
+    
+        @media screen and (min-width: 1200px) {
+            width: calc((100% - 32px) / 3);
+        }
+    
+}
+
+.film-trending__img{
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.film-description{
+    display: flex;
+    flex-wrap: wrap;
+    color: var(--accent-color);
+}
+
+.film-name{
+    text-transform: uppercase;
+}
+.film-description__genre{
+    margin-right: 5px;
+}
+.film-trending{
+    margin-bottom: 20px;
+}

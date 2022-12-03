@@ -1,0 +1,41 @@
+.js-trending{
+    width: 124px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.glide *{
+    box-sizing: inherit;
+}
+
+.glide {
+    display: none;
+
+
+   @include tablet {
+        display: inline-block;
+        margin-bottom: 50px;
+        height: 200px;
+    }
+}
+.glide__track{
+    overflow: hidden;
+}
+
+
+.glide-slide__img {
+    border-radius: 5px;
+}
+
+.hero {
+
+    @include tablet{
+        height: 184px;
+    }
+
+    @include desktop{
+        height: 298px;
+    }
+}
+

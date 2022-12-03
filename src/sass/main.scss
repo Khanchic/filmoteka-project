@@ -8,9 +8,12 @@
 // ==============BASE==============
 @import './base/common';
 @import './base/container';
+@import './base/mixins';
 
 @import './layouts/page-header/index';
 @import './layouts/page-main';
+@import './layouts/hero_trending';
+@import './layouts/film-trending';
 @import './layouts/pagination';
 @import './layouts/page-footer';
 
