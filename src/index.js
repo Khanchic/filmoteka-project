@@ -4,13 +4,14 @@ import './js/toggle-headers';
 import './js/theme-switch';
 import './js/spinner';
 
-import { getTrending } from './js/markupTrending';
+import { getTrending, getTrendingForDay } from './js/markupTrending';
 
 import './sass/main.scss';
 
 import './js/current-films-storage';
 
 getTrending();
+getTrendingForDay();
 
 // const apiData = new ApiServiceMarkup();
 // const auth = new Auth();
