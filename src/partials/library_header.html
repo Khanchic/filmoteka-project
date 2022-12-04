@@ -1,5 +1,4 @@
-<header id="page-header" class="header header-home">
-  <!--class="header-library"-->
+<header id="page-header" class="header header-library">
   <div class="container header-container-js">
     <nav class="header-nav header__nav">
       <a href="./index.html" class="logo home-page-js" data-link>
@@ -9,7 +8,7 @@
           height="24"
           aria-label="Логотип Фильмотеки"
         >
-          <use href="./img/sprite.svg#icon-film" class="home-page-js"></use>
+          <use href="./img/sprite.svg#icon-film"></use>
         </svg>
         <!--"/" - вернуться на главную страницу-->
         <span class="logo-film home-page-js">Filmoteka</span>
@@ -17,47 +16,26 @@
 
       <ul id="page-nav" class="nav">
         <li class="nav-item">
-          <a
-            href="./index.html"
-            class="link-nav home-page-js current"
-            data-link
-          >
+          <a href="./index.html" class="link-nav home-page-js" data-link>
             home
           </a>
         </li>
         <li class="nav-item">
-          <a href="./library.html" class="link-nav library-page-js" data-link>
+          <a
+            href="./library.html"
+            class="link-nav library-page-js current"
+            data-link
+          >
             my library
           </a>
         </li>
       </ul>
     </nav>
 
-    <form class="search-form search-form-js header__search">
-      <div class="search-form__field-group">
-        <input
-          class="search-form__input"
-          type="text"
-          placeholder="Search for a movie..."
-          name="query"
-          autocomplete="off"
-        />
-        <button class="search-form__icon-btn" type="submit">
-          <svg
-            width="12"
-            height="12"
-            class="input-form-icon"
-            aria-label="Логотип Фильмотеки"
-          >
-            <use href="./img/sprite.svg#icon-search"></use>
-          </svg>
-        </button>
-      </div>
-
-      <p class="search-form__field-error">
-        Search result not successful. Enter the correct movie name and try again
-      </p>
-    </form>
+    <div class="btn-flex">
+      <button type="button" class="btn current-btn watched">watched</button>
+      <button type="button" class="btn queue">queue</button>
+    </div>
   </div>
 
   <!-- Разметка переключателя темы -->
