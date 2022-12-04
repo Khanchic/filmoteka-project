@@ -1,6 +1,7 @@
 import Glide from '@glidejs/glide';
 import refs from './refs/';
 import { queryToAPI } from './queryToAPI';
+import { setCurrentFilmsToLocalStorage } from './current-films-storage';
 
 const querytoapi = new queryToAPI();
 
@@ -17,8 +18,7 @@ async function getTrending() {
   try {
     const { results } = await querytoapi.fetchTrending();
 
-    console.log(results);
-    localStorage.setItem('currentFilmsStorage', JSON.stringify(results));
+    setCurrentFilmsToLocalStorage(results);
 
     createMarkupGlideTrending(results);
     createFilmCards(results);
@@ -50,11 +50,11 @@ function createMarkupGlideTrending(results) {
 
 function createFilmCards(results) {
   const films = results
-    .map(({ poster_path, title, genre_ids, release_date }) => {
+    .map(({ poster_path, title, genre_ids, release_date, id }) => {
       let imageUrl = `https://image.tmdb.org/t/p/original${poster_path}`;
       let realeseYear = release_date.slice(0, 4);
 
-      return /*html*/ `<a class="film-trending__item">
+      return /*html*/ `<a class="film-trending__item" data-film-id=${id}>
         <img class= "film-trending__img" src="${imageUrl}" alt="${title}" loading="lazy" width="280px"
 		    height ="402px"/>
             <div class="film-info">
@@ -63,7 +63,6 @@ function createFilmCards(results) {
                   <p class="film-description__genre">Drama, Action |</p>
                   <p class="film-description__release">${realeseYear}</p>
                 </div>
-               
             </div>
         </a>`;
     })
