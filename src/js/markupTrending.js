@@ -4,7 +4,6 @@ import { queryToAPI } from './queryToAPI';
 
 const querytoapi = new queryToAPI();
 
-
 const glideTrending = new Glide('.glide', {
   type: 'carousel',
   startAt: 0,
@@ -13,24 +12,26 @@ const glideTrending = new Glide('.glide', {
   hoverpause: true,
   bound: true,
 });
-  
 
 async function getTrending() {
   try {
     const { results } = await querytoapi.fetchTrending();
 
+    console.log(results);
+    localStorage.setItem('currentFilmsStorage', JSON.stringify(results));
+
     createMarkupGlideTrending(results);
     createFilmCards(results);
-      
   } catch (error) {
     console.log(error);
   }
 }
 
 function createMarkupGlideTrending(results) {
-    const markup = results.map(({ poster_path,title, release_date }) => {
-            let imageUrl = `https://image.tmdb.org/t/p/original${poster_path}`;
-            return /*html*/ `
+  const markup = results
+    .map(({ poster_path, title, release_date }) => {
+      let imageUrl = `https://image.tmdb.org/t/p/original${poster_path}`;
+      return /*html*/ `
     <li class="glide__slide">
         <img
         class="glide-slide__img"
@@ -39,23 +40,21 @@ function createMarkupGlideTrending(results) {
         width="124px"
 		    height ="180px"
       />
-    </li>`
-  ;
-        })
-        .join('');
+    </li>`;
+    })
+    .join('');
 
   refs.glide.innerHTML = markup;
   glideTrending.mount();
-
 }
 
 function createFilmCards(results) {
-  const films = results.map(({ poster_path, title, genre_ids, release_date }) => {
-    let imageUrl = `https://image.tmdb.org/t/p/original${poster_path}`;
-    let realeseYear = release_date.slice(0, 4);
-    
-   
-    return /*html*/`<li class="film-trending__item">
+  const films = results
+    .map(({ poster_path, title, genre_ids, release_date }) => {
+      let imageUrl = `https://image.tmdb.org/t/p/original${poster_path}`;
+      let realeseYear = release_date.slice(0, 4);
+
+      return /*html*/ `<a class="film-trending__item">
         <img class= "film-trending__img" src="${imageUrl}" alt="${title}" loading="lazy" width="280px"
 		    height ="402px"/>
             <div class="film-info">
@@ -66,12 +65,11 @@ function createFilmCards(results) {
                 </div>
                
             </div>
-        </a>`
-  }).join('');
+        </a>`;
+    })
+    .join('');
 
   refs.filmCards.innerHTML = films;
-
-
 }
 
 export { getTrending };

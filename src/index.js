@@ -1,4 +1,3 @@
-
 import './js/scroll-to-top';
 
 import './js/toggle-headers';
@@ -7,13 +6,9 @@ import './js/spinner';
 
 import { getTrending } from './js/markupTrending';
 
-
-
 import './sass/main.scss';
 
-
 getTrending();
-
 
 const apiData = new ApiServiceMarkup();
 const auth = new Auth();
