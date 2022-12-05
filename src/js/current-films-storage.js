@@ -1,4 +1,4 @@
-import refs from './refs/index.js';
+import refs from './refs/links.js';
 import { createOneFilmCard } from './markupFilm.js';
 
 export function setCurrentFilmsToLocalStorage(results) {

@@ -1,4 +1,4 @@
-import refs from './refs/';
+import refs from './refs/links';
 import { createGenresNamesForCard, saveGenres } from './genre-storage';
 
 function createFilmCards() {
