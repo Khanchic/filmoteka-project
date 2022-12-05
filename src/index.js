@@ -4,6 +4,7 @@ import './js/scroll-to-top';
 import './js/theme-switch';
 
 import './js/getMovieOnSearch';
+import './js/pagination';
 
 import { getTrending, getTrendingForDay } from './js/markupTrending';
 
