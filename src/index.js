@@ -4,6 +4,7 @@ import './js/toggle-headers';
 import './js/theme-switch';
 import './js/spinner';
 import './js/getMovieOnSearch';
+import './js/pagination';
 
 import { getTrending } from './js/markupTrending';
 
