@@ -1,5 +1,5 @@
 import Glide from '@glidejs/glide';
-import refs from './refs/';
+import refs from './refs/links';
 import { queryToAPI } from './queryToAPI';
 import { setCurrentFilmsToLocalStorage } from './current-films-storage';
 import { createGenresNamesForCard, saveGenres} from './genre-storage';

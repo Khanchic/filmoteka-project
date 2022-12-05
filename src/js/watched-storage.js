@@ -1,4 +1,4 @@
-import refs from './refs/index.js';
+import refs from './refs/links.js';
 import { currentFilm } from './current-films-storage';
 
 refs.addToWatchedBtn.addEventListener('click', addToWatchedFilms);

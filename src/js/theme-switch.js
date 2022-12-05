@@ -1,6 +1,6 @@
 
-import { theme } from './constants/'
-import refs from './refs/'
+import { theme } from './header/header'
+import refs from './refs/links'
 
 const classOnBody = document.body.classList;
 const LOCAL_STORAGE_THEME_KEY = 'theme'
