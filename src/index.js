@@ -12,7 +12,7 @@ import './sass/main.scss';
 import './js/current-films-storage';
 import './js/watched-storage';
 import { createFilmCards } from './js/markupWatched';
-
+console.log("Hello ")
 getTrending();
 getTrendingForDay();
 
