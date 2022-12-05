@@ -12,4 +12,3 @@ const errorNotification = () => {
 export default errorNotification
 
 
-console.log("Hello ")
