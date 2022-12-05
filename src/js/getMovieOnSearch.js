@@ -45,11 +45,6 @@ export function clearMarkup() {
 refs.serchForm.addEventListener('submit', event => {
   event.preventDefault();
 
-  window.scrollTo({
-    top: 250,
-    behavior: 'smooth',
-  });
-
   clearMarkup();
 
   getMovie()
@@ -95,6 +90,11 @@ export function renderPhotos(data) {
         </a>`;
     })
     .join('');
+
+  window.scrollTo({
+    top: 250,
+    behavior: 'smooth',
+  });
 
   refs.filmCards.insertAdjacentHTML('beforeend', markup);
 }

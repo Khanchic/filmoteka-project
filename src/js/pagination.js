@@ -1,6 +1,6 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
-import refs from './refs';
+import refs from './refs/links';
 import { query } from './getMovieOnSearch';
 import axios from 'axios';
 import { clearMarkup } from './getMovieOnSearch';
