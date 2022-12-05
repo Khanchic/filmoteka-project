@@ -1,5 +1,3 @@
-export const BASE_URL = 'https://api.themoviedb.org/3/';
-export const BASE_AUTH_URL = 'https://identitytoolkit.googleapis.com/v1/accounts';
 
 export const hiddenClass = 'is-hidden';
 export const currentLinkNavClass = 'current';
