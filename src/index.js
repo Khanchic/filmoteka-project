@@ -4,7 +4,6 @@ import './js/scroll-to-top';
 import './js/theme-switch';
 
 import './js/getMovieOnSearch';
-import './js/pagination';
 
 import './js/firebase/firebase-config'
 import './js/firebase/firebase-user';
