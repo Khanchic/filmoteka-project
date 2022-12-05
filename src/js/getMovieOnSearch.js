@@ -1,4 +1,4 @@
-import refs from './refs';
+import refs from './refs/links';
 import axios from 'axios';
 import { pagination } from './pagination';
 
@@ -67,6 +67,8 @@ refs.serchForm.addEventListener('submit', event => {
       }
       pagination(TOTAL_PAGES, TOTAL_RESULTS);
       renderPhotos(film);
+
+      setCurrentFilmsToLocalStorage(response.results);
     })
     .catch(error => {
       error.message;

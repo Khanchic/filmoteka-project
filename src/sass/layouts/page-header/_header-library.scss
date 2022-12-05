@@ -5,43 +5,45 @@
   background-color: var(--grey-900);
 
   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url(../img/header-library/bg-img-mob.jpg);
+    url(../img/header-library/libery-bg-mobile-1x-min.jpg);
 
   @media screen and (min-device-pixel-ratio: 2),
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(../img/header-library/bg-img-mob@2x.jpg);
+      url(../img/header-library/libery-bg-mobile-2x-min.jpg);
   }
 
   @media screen and (min-width: $tablet) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(../img/header-library/bg-img-tablet.jpg);
-    margin-bottom: 60px;
+      url(../img/header-library/libery-bg-tablet-1x-min.jpg);
+
+
+
 
     @media screen and (min-device-pixel-ratio: 2),
       screen and (min-resolution: 192dpi),
       screen and (min-resolution: 2dppx) {
-      background-image: linear-gradient(
-          rgba(0, 0, 0, 0.56),
-          rgba(0, 0, 0, 0.56)
-        ),
-        url(../img/header-library/bg-img-tablet@2x.jpg);
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+       url(../img/header-library/libery-bg-tablet-2x-min.jpg);
     }
   }
   @media screen and (min-width: $desktop) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(../img/header-library/bg-img-desktop.jpg);
+      url(../img/header-library/libery-bg-destop-1x-min.jpg);
   }
 
   @media screen and (min-device-pixel-ratio: 2),
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(../img/header-library/bg-img-desktop@2x.jpg);
+
+      url(../img/header-library/libery-bg-destop-2x-min.jpg);
+
   }
 
   .header__nav {
     margin-bottom: 47px;
   }
 }
+
