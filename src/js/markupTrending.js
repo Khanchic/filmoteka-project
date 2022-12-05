@@ -78,8 +78,8 @@ function createFilmCards(results) {
        }
 
 
-      return /*html*/ `<a class="film-trending__item" data-film-id=${id}>
-        <img class= "film-trending__img" src="${imageUrl}" alt="${title}" loading="lazy" width="280px"
+      return /*html*/ `<li class="film-trending__item" data-film-id=${id}>
+        <a><img class= "film-trending__img" src="${imageUrl}" alt="${title}" loading="lazy" width="280px"
 		    height ="402px"/>
             <div class="film-info">
                 <p class="film-name">${title}</p>
@@ -88,7 +88,8 @@ function createFilmCards(results) {
                   <p class="film-description__release">${realeseYear}</p>
                 </div>
             </div>
-        </a>`;
+        </a>
+        </li>`;
     })
     .join('');
 
