@@ -14,11 +14,12 @@
 @import './layouts/page-main';
 @import './layouts/hero_trending';
 @import './layouts/film-trending';
-@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@import 'node_modules/@glidejs/glide/src/assets/sass/glide.core';
+
+@import './layouts/firebase';
 
 @import './layouts/pagination';
 @import './layouts/page-footer';
-
 
 @import './layouts/color-switch-theme';
 @import './layouts/spinner';

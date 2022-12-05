@@ -5,6 +5,13 @@ import './js/theme-switch';
 import './js/spinner';
 import './js/getMovieOnSearch';
 
+import './js/firebase/firebase-config'
+import './js/firebase/firebase-user';
+import './js/firebase/firebase-modal-reg';
+import './js/firebase/firebase-modal-auth';
+import './js/firebase/firebase-main';
+
+
 import { getTrending, getTrendingForDay } from './js/markupTrending';
 
 import './sass/main.scss';
