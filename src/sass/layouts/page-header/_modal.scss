@@ -24,27 +24,21 @@
     width: 240px;
     height: 357px;
     margin-top: 48px;
-    
-  }
-    @media screen and (min-width:$tablet) {
-      .img__cart{
-        width: 264px;
-        height: 374px;
-        margin-top: 40px;
+    @include tablet {
+      display: inline;
+      width: 264px;
+      height: 374px;
+      margin-top: 40px;
       }
-    }
-
-    @media screen and (min-width: $desktop) {
-      .img__cart {
+      @include desktop {
         width: 375px;
         height: 478px;
         margin-top: 40px;
-      }
-    }
-  
+      } 
+  }
   
   .modal {
-    width: 450px;
+    width: 100%;
     min-height: 609px;
     background-repeat: 10;
     position: absolute;
@@ -53,79 +47,81 @@
     background: #FFFFFF;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-  }
-  @media screen and (min-width:$tablet) {
-    .modal {
+
+    display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+    @include tablet {
       position: absolute;
-      width: 100%;
-      top: 50%;
-      left: 50%;
-    }
-  }
-  @media screen and (min-width: $desktop) {
-    .modal {
-      position: absolute;
-      // width: 100%;
-      max-width: 806px;
-      min-height: 558px;
+      width: 704px;
+      height: 552px;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-    }
+      flex-direction: row;
+  }
+   
+  @include desktop {
+    position: absolute;
+    max-width: 806px;
+    min-height: 558px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: row;
+
+  }
   }
   
   .modal__close {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     position: absolute;
     top: 8px;
     right: 8px;
     background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: none;
   }
   .modal__close:hover .modal__icon {
     fill: var(--accent-color);
   }
   
   .modal__icon {
-    width: 11px;
-    height: 11px;
+    width: 14px;
+    height: 14px;
     justify-content: center;
     align-items: center;
     fill: #000000;
     fill: currentColor;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    // transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .modal__title {
  margin-top: 20px;
 font-family: 'Roboto';
 text-transform: uppercase;
-text-align: center;
 font-weight: 500;
 font-size: 20px;
 line-height: 1.15;
 color: var(--primary-text-color);
-  }
-  @media screen and (min-width:$tablet){
-    .modal__title {
-      margin-top: 0px;
-  }
+  @include tablet {
+      margin-top: 40px;
+      margin-bottom: 20px;
   }  
-  @media screen and (min-width: $desktop) {
-    .modal__title {
-      // margin-top: 0px; 
+  @include desktop {
+    margin-top: 40px;
+    margin-bottom: 20px;
       font-size: 30px;
       line-height: 1.17;
-    }
   }
+}
 
   .modal__text {
     margin-top: 20px;
 font-family: 'Roboto';
 text-transform: uppercase;
-text-align: center;
 font-weight: 500;
 font-size: 12px;
 line-height: 1.33;
@@ -136,7 +132,6 @@ color: var(--primary-text-color);
     margin-top: 8px;
 font-family: 'Roboto';
 text-transform: uppercase;
-text-align: center;
 font-weight: 500;
 font-size: 12px;
 line-height: 1.67;
@@ -144,22 +139,95 @@ color: var(--primary-text-color);
   }
 
   .position {
-  display: flex;
+  
+  @include tablet {
+   margin-left: 68px; 
+   margin-right: 72px;
+}
+@include desktop {
+  margin-left: 16px; 
+  margin-right: 12px;
+}
+  }
+
+  .modal__btn {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
   
-  
+ 
+
+// @include tablet {
+ 
+// }
+// @include desktop {
+ 
+// }
 
 
+.btn--modal {
+  @include button-reset();
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  color: var(--primary-text-color);
+  padding: 13px 14px;
+  border-radius: 5px;
+  border: 1px solid var(--primary-text-color);
+  min-width: 110px;
+  min-height: 44px;
 
+  @include hover {
+    border-color: var(--accent-color);
+   
+  }
 
+  &:not(:last-child) {
+    margin-right: 20px;
+    @include tablet {
+      margin-right: 15px;
+      }
+      @include desktop {
+        margin-right: 15px;
+      }
+  }
 
-
-  // @media screen and (min-width:$tablet) {
-  //   .modal {
-    
-  // }
-  // @media screen and (min-width: $desktop) {
-  //   .modal {
-      
+ @include tablet {
+  min-width: 125px;
+ }
+@include desktop {
+  min-width: 136px;
+}
+}
+  // &-flex {
+  //   @media screen and (max-width: $mob) {
+  //     display: flex;
+  //     justify-content: space-between;
   //   }
   // }
+
+
+.current-btn {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+ 
+}
+
+table {
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-spacing: 10px 20px;
+}
+
+table {
+  width: 100%;
+}
+th {
+  width: 40%;
+}
