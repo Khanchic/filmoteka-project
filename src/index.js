@@ -10,9 +10,13 @@ import { getTrending, getTrendingForDay } from './js/markupTrending';
 import './sass/main.scss';
 
 import './js/current-films-storage';
+import './js/watched-storage';
+import { createFilmCards } from './js/markupWatched';
 
 getTrending();
 getTrendingForDay();
+
+// createFilmCards();
 
 // const apiData = new ApiServiceMarkup();
 // const auth = new Auth();

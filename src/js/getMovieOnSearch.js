@@ -49,8 +49,11 @@ refs.serchForm.addEventListener('submit', event => {
       if (film.length === 0) {
         return console.log('мало слів');
       }
+
+      setCurrentFilmsToLocalStorage(response.results);
+
       renderPhotos(film);
-      console.log(response);
+      console.log(film);
     })
     .catch(error => {
       error.message;
