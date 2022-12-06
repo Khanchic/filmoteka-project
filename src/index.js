@@ -12,7 +12,6 @@ import './sass/main.scss';
 import './js/current-films-storage';
 import './js/watched-storage';
 
-console.log('results');
 getTrending();
 getTrendingForDay();
 

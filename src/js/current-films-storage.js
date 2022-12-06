@@ -2,12 +2,12 @@ import refs from './refs/index.js';
 import { createOneFilmCard } from './markupFilm.js';
 import { save, load, remove } from './storage-methods';
 
-let currentFilmsStorage = [];
+// let currentFilmsStorage = [];
 
 export function setCurrentFilmsToLocalStorage(results) {
-  currentFilmsStorage.push(results);
-  console.log(currentFilmsStorage);
-  save('currentFilmsStorage', JSON.stringify(currentFilmsStorage));
+  // currentFilmsStorage.push(results).flatMap();
+  // console.log(currentFilmsStorage);
+  save('currentFilmsStorage', JSON.stringify(results));
 }
 
 refs.filmCards.addEventListener('click', onFilmClick);
