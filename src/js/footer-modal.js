@@ -1,10 +1,10 @@
-import refs from './refs/index.js';
+import refs from './refs/links';
 
-refs.openModalBtn.addEventListener("click", toggleModal);
-refs.closeModalBtn.addEventListener("click", toggleModal);
+refs.openFooterModalBtn.addEventListener("click", toggleModal);
+refs.closeFooterModalBtn.addEventListener("click", toggleModal);
 
 function toggleModal() {
-  refs.modal.classList.toggle("is-hidden");
+  refs.footerModal.classList.toggle("is-hidden");
 }
 
 // $(document).click(function (e) {
