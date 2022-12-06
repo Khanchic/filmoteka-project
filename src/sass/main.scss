@@ -10,6 +10,9 @@
 @import './base/container';
 @import './base/mixins';
 
+//================================ Layouts =====================================
+
+
 @import './layouts/page-header/index';
 @import './layouts/page-main';
 @import './layouts/hero_trending';
@@ -22,6 +25,7 @@
 @import './layouts/page-footer';
 
 @import './layouts/color-switch-theme';
-
+@import './layouts/page-header/modal';
 @import './layouts/scroll-up-arrow';
 @import './base/overrides';
+
