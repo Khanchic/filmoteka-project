@@ -33,6 +33,9 @@ const refs = {
   mainWrapper: document.querySelector('.main__section-wrapper'),
   glide: document.querySelector('.js-trending'),
   filmCards: document.querySelector('.js-film-cards'),
+  openModalBtn: document.querySelector("[data-footer-modal-open]"),
+  closeModalBtn: document.querySelector("[data-footer-modal-close]"),
+  modal: document.querySelector("[data-footer-modal]"),
 };
 
 export default refs;

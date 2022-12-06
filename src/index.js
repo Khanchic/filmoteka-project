@@ -10,6 +10,8 @@ import './sass/main.scss';
 
 import './js/current-films-storage';
 
+import './js/footer-modal'
+
 getTrending();
 
 // const apiData = new ApiServiceMarkup();
