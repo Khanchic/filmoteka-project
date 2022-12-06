@@ -21,10 +21,8 @@ function createOneFilmCard({
     cardGenres = createGenresNamesForCard(genre_ids);
   }
 
-  const film = `<div class="position" data-film-id=${id}>
-      <img class="img__cart" src="${imageUrl}" alt="${title}" loading="lazy" />
-    </div>
-    <div class="position">
+  const film = `<img class="img__cart" src="${imageUrl}" alt="${title}" loading="lazy" />
+    <div class="position" data-film-id=${id}>
       <h1 class="modal__title">${title}</h1>
       <table>
         <tr>
