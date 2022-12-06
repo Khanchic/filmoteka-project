@@ -21,6 +21,7 @@ function onFilmClick(e) {
   if (!currentFilm) return;
 
   const currentId = currentFilm.getAttribute('data-film-id');
+
   const currentFilmCard = JSON.parse(load('currentFilmsStorage')).find(
     film => film.id === Number(currentId)
   );
