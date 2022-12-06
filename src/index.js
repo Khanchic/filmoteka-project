@@ -17,5 +17,7 @@ import './sass/main.scss';
 import './js/current-films-storage';
 import './js/watched-storage';
 
+import './js/footer-modal'
+
 getTrending();
 getTrendingForDay();

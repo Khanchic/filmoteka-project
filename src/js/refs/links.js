@@ -2,7 +2,7 @@ const refs = {
   teamList: document.querySelector('.team-list'),
   teamBtn: document.querySelector('.page-footer__action-btn'),
   lightboxBtn: document.querySelector('.lightbox-button'),
- 
+
   movieList: document.querySelector('.main__section-list'),
   iconCloseBtn: document.querySelectorAll('.close-icon-container'),
   loginModal: document.querySelector('.login-page'),
@@ -24,6 +24,9 @@ const refs = {
   mainWrapper: document.querySelector('.main__section-wrapper'),
   glide: document.querySelector('.js-trending'),
   filmCards: document.querySelector('.js-film-cards'),
+  openFooterModalBtn: document.querySelector("[data-footer-modal-open]"),
+  closeFooterModalBtn: document.querySelector("[data-footer-modal-close]"),
+  footerModal: document.querySelector("[data-footer-modal]"),
   openModalBtn: document.querySelector('[data-modal-open]'),
   closeModalBtn: document.querySelector('[data-modal-close]'),
   modal: document.querySelector('[data-modal]'),
