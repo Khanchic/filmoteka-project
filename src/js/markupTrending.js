@@ -1,7 +1,10 @@
 import Glide from '@glidejs/glide';
 import refs from './refs/links';
 import { queryToAPI } from './queryToAPI';
-import { setCurrentFilmsToLocalStorage } from './current-films-storage';
+import {
+  setCurrentFilmsToLocalStorage,
+  setGlideFilmsToLocalStorage,
+} from './current-films-storage';
 import { createGenresNamesForCard, saveGenres } from './genre-storage';
 
 const querytoapi = new queryToAPI();
@@ -19,6 +22,8 @@ async function getTrending() {
   try {
     const { results } = await querytoapi.fetchTrendingForWeek();
 
+    setGlideFilmsToLocalStorage(results);
+    console.log(results);
     createMarkupGlideTrending(results);
   } catch (error) {
     console.log(error);
@@ -27,10 +32,10 @@ async function getTrending() {
 
 function createMarkupGlideTrending(results) {
   const markup = results
-    .map(({ poster_path, title }) => {
+    .map(({ poster_path, title, id }) => {
       let imageUrl = `https://image.tmdb.org/t/p/original${poster_path}`;
       return /*html*/ `
-    <li class="glide__slide">
+    <li class="glide__slide" data-film-id=${id}>
         <img
         class="glide-slide__img"
         src="${imageUrl}"
