@@ -1,14 +1,16 @@
 import refs from './refs/index.js';
 import { currentFilm } from './current-films-storage';
+import { save, load, remove } from './storage-methods';
 
-refs.addToWatchedBtn.addEventListener('click', addToWatchedFilms);
 let watchedFilms = [];
+refs.addToWatchedBtn.addEventListener('click', addToWatchedFilms);
 
 function addToWatchedFilms() {
   const chooseFilmId = currentFilm.getAttribute('data-film-id');
-  const currentFilmCard = JSON.parse(
-    localStorage.getItem('currentFilmsStorage')
-  ).find(film => film.id === Number(chooseFilmId));
+  const currentFilmCard = JSON.parse(load('currentFilmsStorage')).find(
+    film => film.id === Number(chooseFilmId)
+  );
   watchedFilms.push(currentFilmCard);
-  localStorage.setItem('watchedFilmsStorage', JSON.stringify(watchedFilms));
+  console.log(watchedFilms);
+  save('watchedFilmsStorage', JSON.stringify(watchedFilms));
 }

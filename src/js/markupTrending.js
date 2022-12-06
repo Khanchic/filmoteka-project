@@ -2,11 +2,7 @@ import Glide from '@glidejs/glide';
 import refs from './refs/';
 import { queryToAPI } from './queryToAPI';
 import { setCurrentFilmsToLocalStorage } from './current-films-storage';
-import { createGenresNamesForCard, saveGenres} from './genre-storage';
-
-
-
-
+import { createGenresNamesForCard, saveGenres } from './genre-storage';
 
 const querytoapi = new queryToAPI();
 
@@ -23,8 +19,6 @@ async function getTrending() {
   try {
     const { results } = await querytoapi.fetchTrendingForWeek();
 
-    setCurrentFilmsToLocalStorage(results);
-
     createMarkupGlideTrending(results);
   } catch (error) {
     console.log(error);
@@ -33,7 +27,7 @@ async function getTrending() {
 
 function createMarkupGlideTrending(results) {
   const markup = results
-    .map(({ poster_path, title}) => {
+    .map(({ poster_path, title }) => {
       let imageUrl = `https://image.tmdb.org/t/p/original${poster_path}`;
       return /*html*/ `
     <li class="glide__slide">
@@ -56,6 +50,9 @@ async function getTrendingForDay() {
   try {
     const { results } = await querytoapi.fetchTrendingForDay();
 
+    setCurrentFilmsToLocalStorage(results);
+    console.log(results);
+
     saveGenres(results);
     createFilmCards(results);
   } catch (error) {
@@ -63,20 +60,18 @@ async function getTrendingForDay() {
   }
 }
 
-
 function createFilmCards(results) {
   const films = results
     .map(({ poster_path, title, genre_ids, release_date, id }) => {
       let imageUrl = `https://image.tmdb.org/t/p/original${poster_path}`;
       let realeseYear = release_date.slice(0, 4);
-      
-      let cardGenres;
-        if (!genre_ids) {
-          cardGenres = 'Сurrently unavailable';
-        } else {
-          cardGenres = createGenresNamesForCard(genre_ids);
-       }
 
+      let cardGenres;
+      if (!genre_ids) {
+        cardGenres = 'Сurrently unavailable';
+      } else {
+        cardGenres = createGenresNamesForCard(genre_ids);
+      }
 
       return /*html*/ `<a class="film-trending__item" data-film-id=${id}>
         <img class= "film-trending__img" src="${imageUrl}" alt="${title}" loading="lazy" width="280px"
@@ -95,4 +90,4 @@ function createFilmCards(results) {
   refs.filmCards.innerHTML = films;
 }
 
-export { getTrending, getTrendingForDay};
+export { getTrending, getTrendingForDay };
