@@ -10,18 +10,23 @@
 @import './base/container';
 @import './base/mixins';
 
+//================================ Layouts =====================================
+
+
 @import './layouts/page-header/index';
 @import './layouts/page-main';
 @import './layouts/hero_trending';
 @import './layouts/film-trending';
-@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@import 'node_modules/@glidejs/glide/src/assets/sass/glide.core';
+
+@import './layouts/firebase';
 
 @import './layouts/pagination';
 @import './layouts/page-footer';
 @import './layouts/modal-team-info';
 
-
 @import './layouts/color-switch-theme';
-@import './layouts/spinner';
+@import './layouts/page-header/modal';
 @import './layouts/scroll-up-arrow';
-@import './base/overrides'; //всегда в самом низу!
+@import './base/overrides';
+

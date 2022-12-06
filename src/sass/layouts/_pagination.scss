@@ -19,7 +19,7 @@
     border-radius: 5px;
 
     &.mobile {
-      @media screen and (max-width: $tablet - 1px) {
+      @media screen and (max-width: $tablet ) {
         display: none;
       }
     }

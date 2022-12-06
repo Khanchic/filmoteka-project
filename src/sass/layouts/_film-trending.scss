@@ -4,48 +4,64 @@
     padding: 0;
     justify-content: center;
 
-    @include tablet{
+    @media screen and (min-width: 768px) and(max-width: 1279px){
         gap: 32px;
-        // justify-content: center;
     }
     @include desktop{
-        gap:16px;
+        
         justify-content: flex-start;
+        row-gap:32px;
+        column-gap:16px;
     }
 
 }
 
 
 .film-trending__item{
-    margin-bottom: 20px;
     @include font(500, 12px, 1.17);
-
     width: 100%;
+
+    @media screen and (max-width: 767px) {
+        margin-bottom: 20px;
     
-        @media screen and (min-width: 768px) {
-            width: calc((100% - 32px) / 2);
-            margin-bottom: 0;
-        }
+    }
     
-        @media screen and (min-width: 1200px) {
-            width: calc((100% - 32px) / 3);
-        }
+    @media screen and (min-width: 768px) and(max-width: 1279px) { 
+        width: 336px;
+           
+    }
+    
+    @media screen and (min-width: 1280px) {
+        width: calc((100% - 32px) / 3);
+        @include font(500, 20px, 1.2);
+           
+    }
     
 }
 
 .film-trending__img{
     margin-bottom: 10px;
     border-radius: 5px;
+    min-height: 402px;
+    @include tablet{
+        height: 455px;
+    }
+    @include desktop{
+        height: 574px;
+    }
 }
 
 .film-description{
     display: flex;
     flex-wrap: wrap;
     color: var(--accent-color);
+  
+    
 }
 
 .film-name{
     text-transform: uppercase;
+    font-weight: bolder;
 }
 .film-description__genre{
     margin-right: 5px;
@@ -53,3 +69,4 @@
 .film-trending{
     margin-bottom: 20px;
 }
+
