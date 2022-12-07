@@ -1,6 +1,7 @@
 import refs from './refs/links.js';
 import { currentFilm } from './current-films-storage';
 import { save, load, remove } from './storage-methods';
+import { createFilmCards } from './markupWatched';
 
 let watchedFilms = [];
 
