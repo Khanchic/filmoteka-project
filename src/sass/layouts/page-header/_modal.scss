@@ -159,12 +159,7 @@ margin-right: 12px;
   justify-content: flex-start;
 }
 
-// @include tablet {
 
-// }
-// @include desktop {
-
-// }
 .btn--modal {
 @include button-reset();
 font-weight: 500;
@@ -201,12 +196,6 @@ min-width: 125px;
 min-width: 136px;
 }
 }
-// &-flex {
-//   @media screen and (max-width: $mob) {
-//     display: flex;
-//     justify-content: space-between;
-//   }
-// }
 
 .current-btn {
 background-color: var(--accent-color);
