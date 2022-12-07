@@ -1,22 +1,19 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
-import refs from './refs/links';
-import { query } from './getMovieOnSearch';
 import axios from 'axios';
 import { clearMarkup } from './getMovieOnSearch';
+import refs from './refs/links';
 
-async function btnClickPagination(currentPage) {
+async function btnClickTrendingPagination(currentPage) {
   try {
     const searchParams = new URLSearchParams({
       api_key: '10612ebbbeaf2ad5999e09badf85e183',
-      query: query.value.split(' ').join('+'),
     });
 
     const PAGE = currentPage;
     const response = await axios.get(
-      `https://api.themoviedb.org/3/search/movie?${searchParams}&page=${PAGE}`
+      `https://api.themoviedb.org/3/trending/movie/week?${searchParams}&page=${PAGE}`
     );
-
     if (response.status !== 200) {
       throw new Error(response.status);
     }
@@ -60,7 +57,7 @@ export function pagination(TOTAL_PAGES, TOTAL_RESULTS) {
     const currentPage = event.page;
 
     clearMarkup();
-    btnClickPagination(currentPage)
+    btnClickTrendingPagination(currentPage)
       .then(response => {
         const { results: film } = response;
 
@@ -72,7 +69,7 @@ export function pagination(TOTAL_PAGES, TOTAL_RESULTS) {
   });
 }
 
-export function render(data) {
+function render(data) {
   let markup = '';
 
   window.scrollTo({

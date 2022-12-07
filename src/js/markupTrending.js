@@ -3,6 +3,7 @@ import refs from './refs/links';
 import { queryToAPI } from './queryToAPI';
 import { setCurrentFilmsToLocalStorage } from './current-films-storage';
 import { createGenresNamesForCard, saveGenres } from './genre-storage';
+import { pagination } from './paginationForTrending';
 
 const querytoapi = new queryToAPI();
 
@@ -17,9 +18,11 @@ const glideTrending = new Glide('.glide', {
 
 async function getTrending() {
   try {
-    const { results } = await querytoapi.fetchTrendingForWeek();
+    const { results, total_pages, total_results } =
+      await querytoapi.fetchTrendingForWeek();
 
     createMarkupGlideTrending(results);
+    pagination(total_pages, total_results);
   } catch (error) {
     console.log(error);
   }

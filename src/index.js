@@ -4,6 +4,7 @@ import './js/theme-switch';
 
 import './js/getMovieOnSearch';
 import './js/pagination';
+import './js/paginationForTrending';
 
 import './js/firebase/firebase-config';
 import './js/firebase/firebase-user';
@@ -18,7 +19,7 @@ import './sass/main.scss';
 import './js/current-films-storage';
 import './js/watched-storage';
 
-import './js/footer-modal'
+import './js/footer-modal';
 
 getTrending();
 getTrendingForDay();
