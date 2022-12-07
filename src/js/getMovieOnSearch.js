@@ -1,6 +1,7 @@
 import refs from './refs/links';
 import axios from 'axios';
 import { pagination } from './pagination';
+import { setCurrentFilmsToLocalStorage } from './current-films-storage';
 
 export const {
   elements: { query },
@@ -65,6 +66,9 @@ refs.serchForm.addEventListener('submit', event => {
         );
       }
       renderPhotos(film);
+
+      setCurrentFilmsToLocalStorage(film);
+
       pagination(TOTAL_PAGES, TOTAL_RESULTS);
     })
     .catch(error => {
