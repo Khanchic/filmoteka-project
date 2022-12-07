@@ -1,8 +1,9 @@
 import refs from './refs/links';
 import { createGenresNamesForCard, saveGenres } from './genre-storage';
+import { save, load, remove } from './storage-methods';
 
 function createFilmCards() {
-  const results = JSON.parse(localStorage.getItem('watchedFilmsStorage'));
+  const results = JSON.parse(load('watchedFilmsStorage'));
   console.log(results);
   const films = results
     .map(({ poster_path, title, genre_ids, release_date, id }) => {
@@ -34,3 +35,4 @@ function createFilmCards() {
 }
 
 export { createFilmCards };
+createFilmCards();

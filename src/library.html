@@ -16,6 +16,7 @@
       integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g=="
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./sass/main.scss" />
   </head>
   <body>
     <div class="mask">
@@ -25,10 +26,11 @@
     <include src="./partials/library_header.html"></include>
     <include src="./partials/spinner.html"></include>
     <include src="./partials/library_main.html"></include>
+    <include src="./partials/modal.html"></include>
 
     <include src="./partials/footer.html"></include>
 
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
-    <script type="module" src="./index.js"></script>
+    <script type="module" src="./js/library.js"></script>
   </body>
 </html>

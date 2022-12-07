@@ -26,6 +26,14 @@ function onFilmClick(e) {
 
   if (!currentFilm) return;
 
+  // if (
+  //   JSON.parse(load('currentFilmsStorage')).find(
+  //     film => film.id === Number(chooseFilmId)
+  //   )
+  // ) {
+  //   refs.addToWatchedBtn.textContent = 'remove from Watched';
+  // }
+
   const currentId = currentFilm.getAttribute('data-film-id');
 
   const currentFilmCard = JSON.parse(load('currentFilmsStorage')).find(
