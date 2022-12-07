@@ -16,6 +16,8 @@ import { createFilmCards } from './markupWatched';
 
 import './current-films-storage';
 import './watched-storage';
+import './queue-storage';
+import './switchLibrary';
 
 import './footer-modal';
 

@@ -34,6 +34,8 @@ const refs = {
   addToWatchedBtn: document.querySelector('.add-watched'),
   addToQueueBtn: document.querySelector('.add-queue'),
   inputError: document.querySelector('.search-form__field-error'),
+  watchedBtn: document.querySelector('.watched'),
+  queuedBtn: document.querySelector('.queue'),
 };
 
 export default refs;
