@@ -29,44 +29,33 @@
     z-index: 99;
     overflow: hidden auto;
         
-    @media screen and (max-width: 419px) {
+    @media screen and (max-width: 588px) {
       width: calc(100% - 80px);
-      top: 180%;
+      top: 150%;
     }
 
-    @media screen and (min-width: 420px) and (max-width: 767px) {
+    @media screen and (min-width: 588px) and (max-width: 819px) {
       width: calc(100% - 80px);
-      @media screen and (min-width: 420px) and (max-width: 709px){
-        top: 180%;
-      }
-      @media screen and (min-width: 710px) and (max-width: 767px){
-        top: 100%;
-      }
+      top: 90%;
     }
 
-    @media screen and (min-width: 768px) and (max-width: 1280px) {
+    @media screen and (min-width: 820px) and (max-width: 1055px) {
       width: calc(100% - 80px);
-      @media screen and (min-width: 768px) and (max-width: 999px){
-        top: 100%;
-      }
-      @media screen and (min-width: 1000px) and (max-width: 1280px){
-        top: 80%
-      }
+      top: 70%;
     }
 
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: 1056px) {
       width: calc(100% - 80px);
-      @media screen and (min-width: 1280px) and (max-width: 1288px){
-        top: 80%;
-      }
-    }
-
-    @media screen and (min-width: 1290px) {
-      width: 1210px;
+      max-width: 976px;
       top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(1);
     }
+
+    // @media screen and (min-width: 1290px) {
+    //   width: 1210px;
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translate(-50%, -50%) scale(1);
+    // }
 
   }
 
@@ -106,17 +95,17 @@
     margin-left: auto;
     margin-right: auto;
   
-    &:nth-child(odd) {
-      @media screen and (min-width: 710px) and (max-width: 1000px){
-        margin-right: 0;
-      }
-    }
+    // &:nth-child(odd) {
+    //   @media screen and (min-width: 710px) and (max-width: 1000px){
+    //     margin-right: 0;
+    //   }
+    // }
     
-    &:nth-child(2n) {
-      @media screen and (min-width: 710px) and (max-width: 1000px){
-        margin-left: 0;
-      }
-    }
+    // &:nth-child(2n) {
+    //   @media screen and (min-width: 710px) and (max-width: 1000px){
+    //     margin-left: 0;
+    //   }
+    // }
   }  
 
   &__modal-team-img {
@@ -124,9 +113,9 @@
     overflow: hidden;
     border-radius: 10%;
 
-    @media screen and (min-width: 420px){
-      width: 260px;
-      height: 260px;
+    @media screen and (min-width: 320px){
+      width: 200px;
+      height: 200px;
       margin-right: 0;
     }
   }
@@ -134,7 +123,12 @@
   &__modal-team-discription{
     line-height: 2;
     letter-spacing: .06em;
-    // margin-bottom: 4px;
+  }
+  &__modal-team-discription h2{
+    font-size: 20;
+  }
+  &__modal-team-discription h3{
+    font-size: 14;
   }
 }
 

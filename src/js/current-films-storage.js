@@ -2,11 +2,7 @@ import refs from './refs/links.js';
 import { createOneFilmCard } from './markupFilm.js';
 import { save, load, remove } from './storage-methods';
 
-// let currentFilmsStorage = [];
-
 export function setCurrentFilmsToLocalStorage(results) {
-  // currentFilmsStorage.push(results).flatMap();
-  // console.log(currentFilmsStorage);
   save('currentFilmsStorage', JSON.stringify(results));
 }
 
@@ -26,15 +22,15 @@ function onFilmClick(e) {
 
   if (!currentFilm) return;
 
-  // if (
-  //   JSON.parse(load('currentFilmsStorage')).find(
-  //     film => film.id === Number(chooseFilmId)
-  //   )
-  // ) {
-  //   refs.addToWatchedBtn.textContent = 'remove from Watched';
-  // }
-
   const currentId = currentFilm.getAttribute('data-film-id');
+
+  if (
+    JSON.parse(load('watchedFilmsStorage')).find(
+      film => film.id === Number(currentId)
+    )
+  ) {
+    refs.addToWatchedBtn.textContent = 'remove from Watched';
+  }
 
   const currentFilmCard = JSON.parse(load('currentFilmsStorage')).find(
     film => film.id === Number(currentId)
@@ -47,7 +43,7 @@ function onFilmClick(e) {
 
 function onGlideClick(e) {
   e.preventDefault();
-  console.log('cl');
+
   currentFilm = e.target.closest('li');
 
   if (!currentFilm) return;
