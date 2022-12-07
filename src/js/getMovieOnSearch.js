@@ -2,6 +2,8 @@ import refs from './refs/links';
 import axios from 'axios';
 import { pagination } from './pagination';
 import { setCurrentFilmsToLocalStorage } from './current-films-storage';
+import { createGenresNamesForCard, saveGenres } from './genre-storage';
+
 
 export const {
   elements: { query },
@@ -87,19 +89,31 @@ refs.serchForm.addEventListener('submit', event => {
 });
 
 export function renderPhotos(data) {
+
+ 
+
   let markup = '';
 
   markup = [...data]
     .map(({ poster_path, title, genre_ids, release_date, id }) => {
       let imageUrl = `https://image.tmdb.org/t/p/original${poster_path}`;
       let realeseYear = release_date.slice(0, 4);
+      let cardGenres;
+        if (!genre_ids) {
+          cardGenres = 'Сurrently unavailable';
+        } else {
+          cardGenres = createGenresNamesForCard(genre_ids);
+        }
+
+
+
       return `<a href="#" class="film-trending__item" data-film-id=${id}>
         <img class= "film-trending__img" src="${imageUrl}" alt="${title}" loading="lazy" width="280px"
 		    height ="402px"/>
             <div class="film-info">
                 <p class="film-name">${title}</p>
                 <div class="film-description">
-                  <p class="film-description__genre">Drama, Action |</p>
+                  <p class="film-description__genre">${cardGenres} |</p>
                   <p class="film-description__release">${realeseYear}</p>
                 </div>
             </div>
