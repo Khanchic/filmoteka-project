@@ -3,6 +3,7 @@ import 'tui-pagination/dist/tui-pagination.css';
 import axios from 'axios';
 import { clearMarkup } from './getMovieOnSearch';
 import refs from './refs/links';
+import { setCurrentFilmsToLocalStorage } from './current-films-storage';
 
 async function btnClickTrendingPagination(currentPage) {
   try {
@@ -61,6 +62,7 @@ export function pagination(TOTAL_PAGES, TOTAL_RESULTS) {
       .then(response => {
         const { results: film } = response;
 
+        setCurrentFilmsToLocalStorage(film);
         render(film);
       })
       .catch(error => {
