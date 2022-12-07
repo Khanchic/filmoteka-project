@@ -24,15 +24,16 @@ const refs = {
   mainWrapper: document.querySelector('.main__section-wrapper'),
   glide: document.querySelector('.js-trending'),
   filmCards: document.querySelector('.js-film-cards'),
-  openFooterModalBtn: document.querySelector("[data-footer-modal-open]"),
-  closeFooterModalBtn: document.querySelector("[data-footer-modal-close]"),
-  footerModal: document.querySelector("[data-footer-modal]"),
+  openFooterModalBtn: document.querySelector('[data-footer-modal-open]'),
+  closeFooterModalBtn: document.querySelector('[data-footer-modal-close]'),
+  footerModal: document.querySelector('[data-footer-modal]'),
   openModalBtn: document.querySelector('[data-modal-open]'),
   closeModalBtn: document.querySelector('[data-modal-close]'),
   modal: document.querySelector('[data-modal]'),
   filmInfoContainer: document.querySelector('.film-info'),
   addToWatchedBtn: document.querySelector('.add-watched'),
   addToQueueBtn: document.querySelector('.add-queue'),
+  inputError: document.querySelector('.search-form__field-error'),
 };
 
 export default refs;

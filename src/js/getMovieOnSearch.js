@@ -50,6 +50,10 @@ export function clearMarkup() {
 refs.serchForm.addEventListener('submit', event => {
   event.preventDefault();
 
+  if (query.value === '') {
+    return;
+  }
+
   clearMarkup();
 
   getMovie()
@@ -61,10 +65,16 @@ refs.serchForm.addEventListener('submit', event => {
       } = response;
 
       if (film.length === 0 || query.value === '') {
-        return console.log(
-          'Search result not successful. Enter the correct movie name and '
-        );
+        setTimeout(() => {
+          refs.inputError.style.display = 'block';
+        }, 500);
+
+        setTimeout(() => {
+          refs.inputError.style.display = 'none';
+        }, 3000);
       }
+      refs.inputError.style.display = 'none';
+
       renderPhotos(film);
 
       setCurrentFilmsToLocalStorage(film);
@@ -96,11 +106,6 @@ export function renderPhotos(data) {
         </a>`;
     })
     .join('');
-
-  window.scrollTo({
-    top: 300,
-    behavior: 'smooth',
-  });
 
   refs.filmCards.insertAdjacentHTML('beforeend', markup);
 }
