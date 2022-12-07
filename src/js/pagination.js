@@ -4,6 +4,7 @@ import refs from './refs/links';
 import { query } from './getMovieOnSearch';
 import axios from 'axios';
 import { clearMarkup } from './getMovieOnSearch';
+import { setCurrentFilmsToLocalStorage } from './current-films-storage';
 
 async function btnClickPagination(currentPage) {
   try {
@@ -63,7 +64,7 @@ export function pagination(TOTAL_PAGES, TOTAL_RESULTS) {
     btnClickPagination(currentPage)
       .then(response => {
         const { results: film } = response;
-
+        setCurrentFilmsToLocalStorage(film);
         render(film);
       })
       .catch(error => {
