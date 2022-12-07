@@ -6,17 +6,27 @@
 .reg-list {
   display: flex;
   flex-direction: row;
+  // margin-right: 20px;
+
 }
+
+// .reg-list:last-child{
+//   margin-right: 0;
+// }
+
+.sign-up-btn{
+  margin-right: 20px;
+}
+
 .reg-btn {
   position: relative;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 1.17;
+  @include font(500, 12px, 1.16);
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--accent-color);
   background-color: transparent;
   border: none;
   cursor: pointer;
+  padding:10px 0;
 }
 
 .backdrop {
