@@ -44,6 +44,7 @@
   min-height: 609px;
   background-repeat: 10;
   position: absolute;
+
   top: 20px;
   left: 0;
   background: #FFFFFF;
@@ -84,7 +85,7 @@ align-items: flex-start;
   right: 8px;
   background: #FFFFFF;
   border: none;
-  fill: #000000;
+  // fill: #000000;
 }
 .modal__close:hover .modal__icon {
   fill: #000000;

@@ -21,7 +21,17 @@ function createOneFilmCard({
     cardGenres = createGenresNamesForCard(genre_ids);
   }
 
-  const film = `<img class="img__cart" src="${imageUrl}" alt="${title}" loading="lazy" />
+  const film = `<div class="modal container">
+  <button type="button" class="modal__close" data-modal-close>
+  <a href="" class="" data-modal-close>
+    <svg class="modal__icon" width="11" height="11">
+      <use href="./img/close-btn.svg#icon-cross"></use>
+    </svg>
+  </a>
+</button>
+
+<div class="film-info"></div>
+  <img class="img__cart" src="${imageUrl}" alt="${title}" loading="lazy" />
     <div class="position" data-film-id=${id}>
       <h1 class="modal__title">${title}</h1>
       <table>
@@ -43,7 +53,17 @@ function createOneFilmCard({
         </tr>
       </table>
       <h2 class="modal__text">ABOUT</h2>
-      <p class="text">${overview}</p>`;
+      <p class="text">${overview}</p>
+      <div class="modal__btn">
+      <button type="button" class="btn--modal current-btn add-watched">
+        add to Watched
+      </button>
+      <button type="button" class="btn--modal queue add-queue">
+        add to queue
+      </button>
+    </div>
+      </div>
+      `;
 
   refs.filmInfoContainer.innerHTML = film;
 }
