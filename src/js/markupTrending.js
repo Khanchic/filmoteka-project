@@ -23,7 +23,6 @@ async function getTrending() {
     const { results } = await querytoapi.fetchTrendingForWeek();
 
     setGlideFilmsToLocalStorage(results);
-    console.log(results);
     createMarkupGlideTrending(results);
   } catch (error) {
     console.log(error);
