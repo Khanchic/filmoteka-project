@@ -50,7 +50,7 @@ function onSighIn(e) {
   const userData = {
     email: email,
     password: password,
-    name: name,
+    name: localStorage.getItem('name'),
   };
   const user = new User(userData);
   user.sighIn();

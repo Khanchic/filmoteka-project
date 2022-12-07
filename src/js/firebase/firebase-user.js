@@ -1,5 +1,12 @@
 import { initializeApp } from 'firebase/app';
-import { getDatabase, set, ref, update, remove } from 'firebase/database';
+import {
+  getDatabase,
+  set,
+  ref,
+  update,
+  remove,
+  onValue,
+} from 'firebase/database';
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -79,24 +86,29 @@ export default class User {
     signInWithEmailAndPassword(
       auth,
       this.userData.email,
-      this.userData.password,
-      this.userData.name
+      this.userData.password
     )
       .then(userCredential => {
         const user = userCredential.user;
         const lgDate = new Date();
         let userName;
+        const userNameRef = ref(db, 'users/' + user.uid + '/auth' + '/name');
+        onValue(userNameRef, snapshot => {
+          const name = snapshot.val();
+          userName = name;
+        });
         update(ref(db, 'users/' + user.uid), {
           last_login: lgDate,
         });
-        nameUserHeader.innerHTML = `${this.userData.name}`;
+
         modalAuth.classList.toggle('is-hidden');
         Notify.success(`You're welcome!`);
         sighInHeader.classList.add('is-hidden');
         sighUpHeader.classList.add('is-hidden');
         sighOut.classList.remove('is-hidden');
-        localStorage.setItem('name', this.userData.name);
+        localStorage.setItem('name', userName);
         form.reset();
+        location.reload();
       })
       .catch(error => {
         const errorCode = error.code;
