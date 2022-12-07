@@ -34,12 +34,12 @@
       top: 150%;
     }
 
-    @media screen and (min-width: 588px) and (max-width: 819px) {
+    @media screen and (min-width: 588px) and (max-width: 819.9px) {
       width: calc(100% - 80px);
       top: 90%;
     }
 
-    @media screen and (min-width: 820px) and (max-width: 1055px) {
+    @media screen and (min-width: 820px) and (max-width: 1055.9px) {
       width: calc(100% - 80px);
       top: 70%;
     }
