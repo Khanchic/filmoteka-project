@@ -1,12 +1,12 @@
 import refs from './refs/links';
 
-function toggleModal() {
-  refs.footerModal.classList.toggle("is-hidden");
-}
 
 refs.openFooterModalBtn.addEventListener("click", toggleModal);
 refs.closeFooterModalBtn.addEventListener("click", toggleModal);
 
+function toggleModal() {
+  refs.footerModal.classList.toggle("is-hidden");
+}
 
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
@@ -14,20 +14,10 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
-// document.addEventListener('click', function(e) {
-//   if (e.key === 'Escape') {
-//     refs.footerModal.classList.toggle("is-hidden")
-//   }
-// });
+document.addEventListener('click', onBackdropClick);
 
-// document.addEventListener.click(function (e) {
-//   if ($(e.target).is('data-footer-modal')) {
-//     refs.footerModal.classList.toggle("is-hidden")
-//   }
-// });
-
-// $(document).click(function (e) {
-//     if ($(e.target).is('.modal')) {
-//         closeModal();
-//     }
-// });
+function onBackdropClick(evt) {
+  if (evt.target.classList.contains('page-footer__backdrop')) {
+    toggleModal();
+  }
+}
