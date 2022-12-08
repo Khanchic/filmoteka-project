@@ -37,6 +37,7 @@ const refs = {
   watchedBtn: document.querySelector('.watched'),
   queuedBtn: document.querySelector('.queue'),
   filmImgContainer: document.querySelector('.film-img'),
+  body: document.querySelector('body'),
 };
 
 export default refs;
