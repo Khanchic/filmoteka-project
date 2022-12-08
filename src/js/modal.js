@@ -5,15 +5,20 @@ refs.closeModalBtn.addEventListener("click", (e) => {
   toggleModal();
 });
 
-function toggleModal() {
+
+  function toggleModal(e) {
     refs.modal.classList.toggle("is-hidden");
+    e.preventDefault();
   }
 
-  refs.closeModalBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (e.code === "Escape" && !refs.modal.classList.contains('is-hidden')) {
-      toggleModal(); 
+
+
+  document.addEventListener('keydown', (e) => {
+    if (e.code === "Escape" ) {
+      toggleModal(e); 
+
     }
  });
 
 
+ 
