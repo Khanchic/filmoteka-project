@@ -8,8 +8,6 @@ import './js/getMovieOnSearch';
 import './js/pagination';
 import './js/paginationForTrending';
 
-
-
 import './js/firebase/firebase-config';
 import './js/firebase/firebase-user';
 import './js/firebase/firebase-modal-reg';
@@ -22,6 +20,7 @@ import './sass/main.scss';
 
 import './js/current-films-storage';
 import './js/watched-storage';
+import './js/queue-storage';
 import './js/modal';
 import './js/footer-modal';
 

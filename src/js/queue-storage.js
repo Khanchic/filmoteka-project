@@ -9,7 +9,8 @@ refs.addToQueueBtn.addEventListener('click', toQueueFilms);
 
 // console.log(refs.addToQueueBtn);
 
-function toQueueFilms() {
+function toQueueFilms(e) {
+  console.log(e);
   const chooseFilmId = currentFilm.getAttribute('data-film-id');
 
   if (refs.addToQueueBtn.textContent !== 'remove from queue') {
@@ -21,7 +22,10 @@ function toQueueFilms() {
       queueFilms = JSON.parse(load('queueFilmsStorage'));
     }
 
-    queueFilms.push(currentFilmCard);
+    if (currentFilmCard !== null) {
+      queueFilms.push(currentFilmCard);
+    }
+
     save('queueFilmsStorage', JSON.stringify(queueFilms));
 
     refs.addToQueueBtn.textContent = 'remove from queue';
@@ -34,6 +38,6 @@ function toQueueFilms() {
     save('queueFilmsStorage', JSON.stringify(newQueueFilmsStorage));
 
     refs.addToQueueBtn.textContent = 'add to queue';
-    createFilmCards();
+    // createFilmCards();
   }
 }
