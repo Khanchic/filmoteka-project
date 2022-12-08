@@ -22,15 +22,18 @@ function createOneFilmCard({
   }
 
   const film = `<div class="modal container">
-  <button type="button" class="modal__close" data-modal-close>
-  <a href="" class="" data-modal-close>
-    <svg class="modal__icon" width="11" height="11">
-      <use href="./img/close-btn.svg#icon-cross"></use>
-    </svg>
-  </a>
-</button>
 
-<div class="film-info"></div>
+  <button type="button" class="modal__close" data-modal-close>
+      <a href="" class="" data-modal-close>
+        <svg class="modal__icon" width="11" height="11">
+          <use width="14" heigth="14" href="./img/close-btn.svg#icon-cross"></use>
+        </svg>
+      </a>
+    </button>
+   
+  <div class="film-info"></div>
+ 
+
   <img class="img__cart" src="${imageUrl}" alt="${title}" loading="lazy" />
     <div class="position" data-film-id=${id}>
       <h1 class="modal__title">${title}</h1>
@@ -63,7 +66,7 @@ function createOneFilmCard({
       </button>
     </div>
       </div>
-      `;
+      </div>`;
 
   refs.filmInfoContainer.innerHTML = film;
 }
