@@ -1,3 +1,5 @@
+import './js/spinner'
+
 import './js/scroll-to-top';
 
 import './js/theme-switch';
