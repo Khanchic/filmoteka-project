@@ -1,42 +1,39 @@
-.js-trending{
-    width: 124px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+.js-trending {
+  width: 124px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
-.glide *{
-    box-sizing: inherit;
+.glide * {
+  box-sizing: inherit;
 }
 
 .glide {
-    display: none;
+  display: none;
 
-
-   @include tablet {
-        display: inline-block;
-        margin-bottom: 50px;
-        height: 200px;
-    }
+  @include tablet {
+    display: inline-block;
+    margin-bottom: 50px;
+    height: 200px;
+  }
 }
-.glide__track{
-    overflow: hidden;
+.glide__track {
+  overflow: hidden;
 }
-
 
 .glide-slide__img {
-    border-radius: 5px;
+  border-radius: 5px;
 }
 
 .hero {
- margin-bottom: 35px;
+  margin-bottom: 35px;
 
-    @include tablet{
-        height: 184px;
-    }
+  @include tablet {
+    height: 184px;
+  }
 
-    @include desktop{
-        height: 298px;
-    }
+  @include desktop {
+    height: 298px;
+  }
 }
-
