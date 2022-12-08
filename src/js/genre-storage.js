@@ -16,21 +16,29 @@ export function saveGenres() {
 }
 
 export function createGenresNamesForCard(genresId) {
-  let genresList;
-  const genresInStorage = load(GENRES);
-  const genresArray = [];
-  const selectedGenres = genresId.map(id => {
-    return genresInStorage.filter(idGenre => idGenre.id === id);
-  });
-
-  selectedGenres.map(genre => {
-    genresArray.push(genre[0].name);
-  });
-
-  if (genresArray.length > 0 && genresArray.length <= 3) {
-    genresList = genresArray.join(', ');
-  } else {
-    genresList = `${genresArray[0]}, ${genresArray[1]}, Other`;
+  if (genresId.length === 0) {
+    return 'No information';
   }
-  return genresList;
+  
+  else {
+    let genresList;
+    const genresInStorage = load(GENRES);
+    const genresArray = [];
+    const selectedGenres = genresId.map(id => {
+      return genresInStorage.filter(idGenre => idGenre.id === id);
+    });
+
+    selectedGenres.map(genre => {
+      genresArray.push(genre[0].name);
+    });
+
+    if (genresArray.length > 0 && genresArray.length <= 3) {
+      genresList = genresArray.join(', ');
+    } else {
+      genresList = `${genresArray[0]}, ${genresArray[1]}, Other`;
+    }
+    return genresList;
+    }
+
+ 
 }

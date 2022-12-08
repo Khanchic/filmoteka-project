@@ -38,7 +38,7 @@ export async function getMovie() {
         )
       );
     }
-    console.log(response.data);
+    // console.log(response.data);
     return response.data;
   } catch (error) {
     error.message;
@@ -107,17 +107,15 @@ export function renderPhotos(data) {
 
 
 
-      return `<a href="#" class="film-trending__item" data-film-id=${id}>
+      return `<li class= "film-trending-container"><a class="film-trending__item" data-film-id=${id}>
         <img class= "film-trending__img" src="${imageUrl}" alt="${title}" loading="lazy" width="280px"
 		    height ="402px"/>
-            <div class="film-info">
+            <div class="film-info-for-card film-info">
                 <p class="film-name">${title}</p>
-                <div class="film-description">
-                  <p class="film-description__genre">${cardGenres} |</p>
-                  <p class="film-description__release">${realeseYear}</p>
-                </div>
+                <p class="film-description__genre">${cardGenres} | <span class="film-description__release">${realeseYear}</span></p>
             </div>
-        </a>`;
+        </a>
+        </li>`;
     })
     .join('');
 

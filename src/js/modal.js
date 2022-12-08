@@ -1,12 +1,16 @@
 import refs from './refs/links';
 
-  refs.closeModalBtn.addEventListener("click", toggleModal);
+refs.closeModalBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  toggleModal();
+});
 
-  function toggleModal() {
+function toggleModal() {
     refs.modal.classList.toggle("is-hidden");
   }
 
-  refs.closeModalBtn.addEventListener('keydown', (e) => {
+  refs.closeModalBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     if (e.code === "Escape" && !refs.modal.classList.contains('is-hidden')) {
       toggleModal(); 
     }
