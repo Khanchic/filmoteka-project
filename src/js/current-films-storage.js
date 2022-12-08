@@ -18,8 +18,8 @@ let currentFilm = '';
 function onFilmClick(e) {
   e.preventDefault();
 
-  refs.body.classList.toggle('no-scroll');
-
+ 
+  document.body.style.overflow = 'hidden'
   currentFilm = e.target.closest('a');
 
   if (!currentFilm) return;
@@ -33,8 +33,10 @@ function onFilmClick(e) {
     )
   ) {
     refs.addToWatchedBtn.textContent = 'remove from Watched';
+    
   } else {
     refs.addToWatchedBtn.textContent = 'add to Watched';
+   
   }
 
   if (
@@ -59,8 +61,8 @@ function onFilmClick(e) {
 
 function onGlideClick(e) {
   e.preventDefault();
-
   refs.body.classList.toggle('no-scroll');
+  
 
   currentFilm = e.target.closest('li');
 

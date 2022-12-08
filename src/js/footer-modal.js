@@ -9,6 +9,12 @@ function toggleModal() {
   document.body.style.overflow = 'hidden';
 }
 
+document.addEventListener('click', function (e) {
+  if (refs.footerModal.classList.contains('is-hidden')) {
+    document.body.style.overflow = ''
+  }
+});
+
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape' && !refs.footerModal.classList.contains('is-hidden')) {
     toggleModal()
@@ -24,5 +30,3 @@ function onBackdropClick(evt) {
     document.body.style.overflow = '';
   }
 }
-
-
