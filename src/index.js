@@ -1,4 +1,4 @@
-import './js/spinner'
+import './js/spinner';
 
 import './js/scroll-to-top';
 

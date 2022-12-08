@@ -1,21 +1,22 @@
 import refs from './refs/links';
-import { createGenresNamesForCard, saveGenres } from './genre-storage';
+import { createGenresNamesForCard } from './genre-storage';
 import { save, load, remove } from './storage-methods';
 
 function createFilmCards() {
   let currentBtnStorage = '';
-  if (refs.watchedBtn.classList.contains('current - btn')) {
-    currentBtnStorage = 'watchedFilmsStorage';
+  console.log(refs.watchedBtn);
+  // if (refs.watchedBtn.classList.contains('current-btn')) {
+  //   currentBtnStorage = 'watchedFilmsStorage';
 
-    // queuedBtn;
+  //   // queuedBtn;
 
-    // current - btn;
-  } else {
-    currentBtnStorage = 'queueFilmsStorage';
-  }
+  //   // current - btn;
+  // } else {
+  //   currentBtnStorage = 'queueFilmsStorage';
+  // }
 
-  const results = JSON.parse(load(currentBtnStorage));
-  console.log(results);
+  const results = JSON.parse(load('watchedFilmsStorage'));
+  // console.log(results);
   const films = results
     .map(({ poster_path, title, genre_ids, release_date, id }) => {
       let imageUrl = `https://image.tmdb.org/t/p/original${poster_path}`;
@@ -46,4 +47,4 @@ function createFilmCards() {
 }
 
 export { createFilmCards };
-createFilmCards();
+// createFilmCards();

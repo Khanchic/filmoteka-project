@@ -1,6 +1,6 @@
 import refs from './refs/links.js';
 import { createOneFilmCard } from './markupFilm.js';
-import { save, load, remove } from './storage-methods';
+import { save, load } from './storage-methods';
 
 export function setCurrentFilmsToLocalStorage(results) {
   save('currentFilmsStorage', JSON.stringify(results));
@@ -25,6 +25,7 @@ function onFilmClick(e) {
   const currentId = currentFilm.getAttribute('data-film-id');
 
   if (
+    load('watchedFilmsStorage') &&
     JSON.parse(load('watchedFilmsStorage')).find(
       film => film.id === Number(currentId)
     )

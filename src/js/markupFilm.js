@@ -21,26 +21,23 @@ function createOneFilmCard({
     cardGenres = createGenresNamesForCard(genre_ids);
   }
 
-  const film = `<div class="modal container">
+  // <div class="modal container">
 
-  <button type="button" class="modal__close" data-modal-close>
-      <a href="" class="" data-modal-close>
-        <svg class="modal__icon" width="11" height="11">
-          <use width="14" heigth="14" href="./img/close-btn.svg#icon-cross"></use>
-        </svg>
-      </a>
-    </button>
-   
-  <div class="film-info"></div>
- 
+  // <button type="button" class="modal__close" data-modal-close>
+  //     <a href="" class="" data-modal-close>
+  //       <svg class="modal__icon" width="11" height="11">
+  //         <use width="14" heigth="14" href="./img/close-btn.svg#icon-cross"></use>
+  //       </svg>
+  //     </a>
+  //   </button>
 
-  <img class="img__cart" src="${imageUrl}" alt="${title}" loading="lazy" />
-    <div class="position" data-film-id=${id}>
+  const filmImg = `<img class="img__cart" src="${imageUrl}" alt="${title}" loading="lazy" />`;
+  const filmInfo = `<div class="position" data-film-id=${id}>
       <h1 class="modal__title">${title}</h1>
       <table>
         <tr>
           <td>Vote / Votes</td>
-          <td>${vote_average} / ${vote_count}</td>
+          <td><span class="vote_average">${vote_average}</span> / <span class="vote_count">${vote_count}</span></td>
         </tr>
         <tr>
           <td>Popularity</td>
@@ -57,7 +54,10 @@ function createOneFilmCard({
       </table>
       <h2 class="modal__text">ABOUT</h2>
       <p class="text">${overview}</p>
-      <div class="modal__btn">
+      
+      </div>`;
+  {
+    /* <div class="modal__btn">
       <button type="button" class="btn--modal current-btn add-watched">
         add to Watched
       </button>
@@ -65,10 +65,10 @@ function createOneFilmCard({
         add to queue
       </button>
     </div>
-      </div>
-      </div>`;
-
-  refs.filmInfoContainer.innerHTML = film;
+      </div> */
+  }
+  refs.filmInfoContainer.innerHTML = filmInfo;
+  refs.filmImgContainer.innerHTML = filmImg;
 }
 
 export { createOneFilmCard };
