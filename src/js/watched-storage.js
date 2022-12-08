@@ -7,7 +7,7 @@ let watchedFilms = [];
 
 refs.addToWatchedBtn.addEventListener('click', toWatchedFilms);
 
-console.log(refs.addToWatchedBtn);
+// console.log(refs.addToWatchedBtn);
 function toWatchedFilms(e) {
   console.log(e);
   const chooseFilmId = currentFilm.getAttribute('data-film-id');

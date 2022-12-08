@@ -15,10 +15,13 @@
     }
 
 }
+.film-info-for-card{
+    flex-direction: column;
+}
 
 
-.film-trending__item{
-    @include font(500, 12px, 1.17);
+.film-trending-container{
+    @include font(500, 12px, 1.33);
     width: 100%;
 
     @media screen and (max-width: 767px) {
@@ -66,8 +69,12 @@
 }
 .film-description__genre{
     margin-right: 5px;
+    color: var(--accent-color);
 }
 .film-trending{
     margin-bottom: 20px;
 }
 
+// .film-description__release{
+//     color: var(--accent-color);
+// }
