@@ -36,8 +36,9 @@ function createMarkupGlideTrending(results) {
   const markup = results
     .map(({ poster_path, title, id }) => {
       let imageUrl = `https://image.tmdb.org/t/p/original${poster_path}`;
-       if (poster_path === null) {
-        imageUrl = 'https://s.studiobinder.com/wp-content/uploads/2019/06/Movie-Poster-Templates-StudioBinder.jpg';
+      if (poster_path === null) {
+        imageUrl =
+          'https://s.studiobinder.com/wp-content/uploads/2019/06/Movie-Poster-Templates-StudioBinder.jpg';
       }
 
       return /*html*/ `
@@ -75,10 +76,9 @@ function createFilmCards(results) {
     .map(({ poster_path, title, genre_ids, release_date, id }) => {
       let imageUrl = `https://image.tmdb.org/t/p/original${poster_path}`;
 
-       if (poster_path === null) {
-        imageUrl = '../img/header-home2/no-picture-img-min.png)';
+      if (poster_path === null) {
+        imageUrl = '../img/header-home2/no-picture-img-min.png';
       }
-      
 
       let realeseYear = release_date.slice(0, 4);
 

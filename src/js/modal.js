@@ -1,26 +1,21 @@
 import refs from './refs/links';
 
-refs.closeModalBtn.addEventListener("click", (e) => {
+refs.closeModalBtn.addEventListener('click', e => {
   e.preventDefault();
   toggleModal();
 });
 
+function toggleModal(e) {
+  refs.modal.classList.toggle('is-hidden');
+  // refs.body.classList.toggle('no-scroll');
+  // e.preventDefault();
+}
 
-  function toggleModal(e) {
-    refs.modal.classList.toggle("is-hidden");
-    // refs.body.classList.toggle('no-scroll');
-    e.preventDefault();
+document.addEventListener('keydown', e => {
+  if (e.code === 'Escape' && !refs.modal.classList.contains('is-hidden')) {
+    toggleModal(e);
   }
-
-
-
-  document.addEventListener('keydown', (e) => {
-    if (e.code === "Escape" && !refs.modal.classList.contains('is-hidden')) {
-      toggleModal(e); 
-
-    }
- });
-
+});
 
 //  (() => {
 //   const refs = {
@@ -39,7 +34,6 @@ refs.closeModalBtn.addEventListener("click", (e) => {
 //   }
 // })();
 
-
 // (() => {
 //   const refs = {
 //     openModalBtn: document.querySelector("[data-modal-open]"),
@@ -54,4 +48,3 @@ refs.closeModalBtn.addEventListener("click", (e) => {
 //     refs.modal.classList.toggle("is-hidden");
 //   }
 // })();
-

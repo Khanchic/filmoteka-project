@@ -4,6 +4,7 @@ import axios from 'axios';
 import { clearMarkup } from './getMovieOnSearch';
 import refs from './refs/links';
 import { setCurrentFilmsToLocalStorage } from './current-films-storage';
+import { createGenresNamesForCard, saveGenres } from './genre-storage';
 
 async function btnClickTrendingPagination(currentPage) {
   try {
@@ -82,18 +83,29 @@ function render(data) {
   markup = [...data]
     .map(({ poster_path, title, genre_ids, release_date, id }) => {
       let imageUrl = `https://image.tmdb.org/t/p/original${poster_path}`;
+
+      if (poster_path === null) {
+        imageUrl = '../img/header-home2/no-picture-img-min.png';
+      }
+
       let realeseYear = release_date.slice(0, 4);
-      return `<a href="#" class="film-trending__item" data-film-id=${id}>
+
+      let cardGenres;
+      if (!genre_ids) {
+        cardGenres = 'Сurrently unavailable';
+      } else {
+        cardGenres = createGenresNamesForCard(genre_ids);
+      }
+
+      return /*html*/ `<li class= "film-trending-container"><a class="film-trending__item" data-film-id=${id}>
         <img class= "film-trending__img" src="${imageUrl}" alt="${title}" loading="lazy" width="280px"
 		    height ="402px"/>
-            <div class="film-info">
+            <div class="film-info-for-card film-info">
                 <p class="film-name">${title}</p>
-                <div class="film-description">
-                  <p class="film-description__genre">Drama, Action |</p>
-                  <p class="film-description__release">${realeseYear}</p>
-                </div>
+                <p class="film-description__genre">${cardGenres} | <span class="film-description__release">${realeseYear}</span></p>
             </div>
-        </a>`;
+        </a>
+        </li>`;
     })
     .join('');
   refs.filmCards.insertAdjacentHTML('beforeend', markup);
