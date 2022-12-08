@@ -69,6 +69,8 @@ function createOneFilmCard({
   }
   refs.filmInfoContainer.innerHTML = filmInfo;
   refs.filmImgContainer.innerHTML = filmImg;
+
 }
 
 export { createOneFilmCard };
+
