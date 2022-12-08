@@ -6,20 +6,18 @@
 
   --primary-text-color: #000000;
   --secondary-text-color: #545454;
-  --accent-color: #FF6B08;
-  --second--accent-color: #FF001B;
+  --accent-color: #ff6b08;
+  --accent-color-modal: #ff6b01;
+  --second--accent-color: #ff001b;
   --white-text-color: #ffffff;
   --error-text-color: #ff001b;
-  --transparent: rgba(0, 0, 0, 0); 
+  --transparent: rgba(0, 0, 0, 0);
   --footer-text-color: var(--grey-900);
-  
+
   --bg-light: var(--grey-100);
 
- 
   --transition-timing: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-
 
 $mob: 320px;
 $tablet: 767.99px;

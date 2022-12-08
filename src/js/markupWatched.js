@@ -4,18 +4,18 @@ import { save, load, remove } from './storage-methods';
 
 function createFilmCards() {
   let currentBtnStorage = '';
-  // console.log(currentBtnStorage);
-  if (refs.watchedBtn.classList.contains('current-btn')) {
-    currentBtnStorage = 'watchedFilmsStorage';
+  console.log(refs.watchedBtn);
+  // if (refs.watchedBtn.classList.contains('current-btn')) {
+  //   currentBtnStorage = 'watchedFilmsStorage';
 
-    // queuedBtn;
+  //   // queuedBtn;
 
-    // current - btn;
-  } else {
-    currentBtnStorage = 'queueFilmsStorage';
-  }
+  //   // current - btn;
+  // } else {
+  //   currentBtnStorage = 'queueFilmsStorage';
+  // }
 
-  const results = JSON.parse(load(currentBtnStorage));
+  const results = JSON.parse(load('watchedFilmsStorage'));
   // console.log(results);
   const films = results
     .map(({ poster_path, title, genre_ids, release_date, id }) => {
@@ -47,4 +47,4 @@ function createFilmCards() {
 }
 
 export { createFilmCards };
-createFilmCards();
+// createFilmCards();

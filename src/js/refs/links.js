@@ -36,6 +36,7 @@ const refs = {
   inputError: document.querySelector('.search-form__field-error'),
   watchedBtn: document.querySelector('.watched'),
   queuedBtn: document.querySelector('.queue'),
+  filmImgContainer: document.querySelector('.film-img'),
 };
 
 export default refs;

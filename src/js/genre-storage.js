@@ -1,16 +1,16 @@
 import { save, load, remove } from './storage-methods';
 import { queryToAPI } from './queryToAPI';
 
-
-const GENRES='genre';
+const GENRES = 'genre';
 
 const querytoapi = new queryToAPI();
 
 export function saveGenres() {
-  return querytoapi.fetchQueryResultsForGenres()
+  return querytoapi
+    .fetchQueryResultsForGenres()
     .then(genresData => {
       save(GENRES, genresData);
-      console.log(genresData);
+      // console.log(genresData);
     })
     .catch(error => console.log(error));
 }

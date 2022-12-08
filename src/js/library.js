@@ -1,9 +1,8 @@
-import refs from './refs/links';
 import './scroll-to-top';
 
 import './theme-switch';
 
-// import './pagination';
+import './pagination';
 
 import './firebase/firebase-config';
 import './firebase/firebase-user';

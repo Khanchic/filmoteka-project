@@ -1,13 +1,15 @@
 import refs from './refs/links.js';
 import { currentFilm } from './current-films-storage';
-import { save, load, remove } from './storage-methods';
+import { save, load } from './storage-methods';
 import { createFilmCards } from './markupWatched';
 
 let watchedFilms = [];
 
 refs.addToWatchedBtn.addEventListener('click', toWatchedFilms);
 
-function toWatchedFilms() {
+console.log(refs.addToWatchedBtn);
+function toWatchedFilms(e) {
+  console.log(e);
   const chooseFilmId = currentFilm.getAttribute('data-film-id');
 
   if (refs.addToWatchedBtn.textContent !== 'remove from Watched') {
