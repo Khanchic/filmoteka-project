@@ -97,6 +97,11 @@ export function renderPhotos(data) {
   markup = [...data]
     .map(({ poster_path, title, genre_ids, release_date, id }) => {
       let imageUrl = `https://image.tmdb.org/t/p/original${poster_path}`;
+
+      if (poster_path === null) {
+        imageUrl = '../img/no-picture-img.jpg';
+      }
+      
       let realeseYear = release_date.slice(0, 4);
       let cardGenres;
         if (!genre_ids) {
