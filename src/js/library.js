@@ -1,3 +1,4 @@
+import './spinner';
 import './scroll-to-top';
 
 import './theme-switch';
