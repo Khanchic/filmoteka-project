@@ -99,7 +99,7 @@ export function renderPhotos(data) {
       let imageUrl = `https://image.tmdb.org/t/p/original${poster_path}`;
 
       if (poster_path === null) {
-        imageUrl = '../img/no-picture-img.jpg';
+        imageUrl = 'https://s.studiobinder.com/wp-content/uploads/2019/06/Movie-Poster-Templates-StudioBinder.jpg';
       }
       
       let realeseYear = release_date.slice(0, 4);

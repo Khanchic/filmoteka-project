@@ -84,6 +84,10 @@ export function render(data) {
   markup = [...data]
     .map(({ poster_path, title, genre_ids, release_date, id }) => {
       let imageUrl = `https://image.tmdb.org/t/p/original${poster_path}`;
+      if (poster_path === null) {
+        imageUrl = 'https://s.studiobinder.com/wp-content/uploads/2019/06/Movie-Poster-Templates-StudioBinder.jpg';
+      }
+      
       let realeseYear = release_date.slice(0, 4);
       return `<a href="#" class="film-trending__item" data-film-id=${id}>
         <img class= "film-trending__img" src="${imageUrl}" alt="${title}" loading="lazy" width="280px"
