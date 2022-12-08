@@ -1,17 +1,15 @@
 .registration {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 .reg-list {
   display: flex;
   flex-direction: row;
   // margin-right: 20px;
-
 }
 
-
-.sign-up-btn{
+.sign-up-btn {
   margin-right: 20px;
 }
 
@@ -23,7 +21,7 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  padding:10px 0;
+  padding: 10px 0;
 }
 
 .backdrop {
