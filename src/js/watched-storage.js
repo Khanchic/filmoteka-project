@@ -7,9 +7,7 @@ let watchedFilms = [];
 
 refs.addToWatchedBtn.addEventListener('click', toWatchedFilms);
 
-// console.log(refs.addToWatchedBtn);
 function toWatchedFilms(e) {
-  console.log(e);
   const chooseFilmId = currentFilm.getAttribute('data-film-id');
 
   if (refs.addToWatchedBtn.textContent !== 'remove from Watched') {
@@ -20,8 +18,10 @@ function toWatchedFilms(e) {
     if (load('watchedFilmsStorage')) {
       watchedFilms = JSON.parse(load('watchedFilmsStorage'));
     }
+    if (currentFilmCard !== null) {
+      watchedFilms.push(currentFilmCard);
+    }
 
-    watchedFilms.push(currentFilmCard);
     save('watchedFilmsStorage', JSON.stringify(watchedFilms));
 
     refs.addToWatchedBtn.textContent = 'remove from Watched';
@@ -29,11 +29,13 @@ function toWatchedFilms(e) {
     const filmToRemuve = JSON.parse(load('watchedFilmsStorage')).findIndex(
       film => film.id === Number(chooseFilmId)
     );
+
     const newWatchedFilmsStorage = JSON.parse(load('watchedFilmsStorage'));
     newWatchedFilmsStorage.splice(filmToRemuve, 1);
+
     save('watchedFilmsStorage', JSON.stringify(newWatchedFilmsStorage));
 
     refs.addToWatchedBtn.textContent = 'add to Watched';
-    createFilmCards();
+    // createFilmCards();
   }
 }
