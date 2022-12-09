@@ -18,7 +18,6 @@ let currentFilm = '';
 function onFilmClick(e) {
   e.preventDefault();
 
- 
   document.body.style.overflow = 'hidden'
   currentFilm = e.target.closest('a');
 
