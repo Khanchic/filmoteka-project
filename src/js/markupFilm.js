@@ -14,12 +14,19 @@ function createOneFilmCard({
 }) {
   let imageUrl = `https://image.tmdb.org/t/p/original${poster_path}`;
 
+  if (poster_path === null) {
+        imageUrl =
+          'https://s.studiobinder.com/wp-content/uploads/2019/06/Movie-Poster-Templates-StudioBinder.jpg';
+      }
   let cardGenres;
   if (!genre_ids) {
     cardGenres = 'Сurrently unavailable';
   } else {
     cardGenres = createGenresNamesForCard(genre_ids);
   }
+  const rating = vote_average.toFixed(1);
+  const popularityMark = popularity.toFixed(1);
+
 
   // <div class="modal container">
 
@@ -34,20 +41,25 @@ function createOneFilmCard({
   const filmImg = `<img class="img__cart" src="${imageUrl}" alt="${title}" loading="lazy" />`;
   const filmInfo = `<div class="position" data-film-id=${id}>
       <h1 class="modal__title">${title}</h1>
-      <table>
-        <tr>
+      <table class="film-info__table">
+        <tr class="film-info__item">
           <td>Vote / Votes</td>
-          <td><span class="vote_average">${vote_average}</span> / <span class="vote_count">${vote_count}</span></td>
+          <td><span class="vote_average">${rating}</span> / <span class="vote_count">${vote_count}</span></td>
         </tr>
-        <tr>
+        <tr class="spacer"><td></td><td></td></tr>
+        <tr class="film-info__item">
           <td>Popularity</td>
-          <td>${popularity}</td>
+          <td>${popularityMark}</td>
         </tr>
-        <tr>
+        <tr class="spacer"><td></td><td></td></tr>
+
+        <tr class="film-info__item">
           <td>Original Title</td>
           <td>${original_title}</td>
         </tr>
-        <tr>
+        <tr class="spacer"><td></td><td></td></tr>
+
+        <tr class="film-info__item">
           <td>Genre</td>
           <td>${cardGenres}</td>
         </tr>
