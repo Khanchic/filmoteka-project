@@ -18,12 +18,16 @@ let currentFilm = '';
 function onFilmClick(e) {
   e.preventDefault();
 
-  document.body.style.overflow = 'hidden'
+  document.body.style.overflow = 'hidden';
   currentFilm = e.target.closest('a');
 
   if (!currentFilm) return;
 
   const currentId = currentFilm.getAttribute('data-film-id');
+
+  let currentFilmCard = JSON.parse(load('currentFilmsStorage')).find(
+    film => film.id === Number(currentId)
+  );
 
   if (
     load('watchedFilmsStorage') &&
@@ -32,10 +36,11 @@ function onFilmClick(e) {
     )
   ) {
     refs.addToWatchedBtn.textContent = 'remove from Watched';
-    
+    currentFilmCard = JSON.parse(load('watchedFilmsStorage')).find(
+      film => film.id === Number(currentId)
+    );
   } else {
     refs.addToWatchedBtn.textContent = 'add to Watched';
-   
   }
 
   if (
@@ -45,26 +50,24 @@ function onFilmClick(e) {
     )
   ) {
     refs.addToQueueBtn.textContent = 'remove from queue';
+    currentFilmCard = JSON.parse(load('queueFilmsStorage')).find(
+      film => film.id === Number(currentId)
+    );
   } else {
     refs.addToQueueBtn.textContent = 'add to queue';
   }
 
-  const currentFilmCard = JSON.parse(load('currentFilmsStorage')).find(
-    film => film.id === Number(currentId)
-  );
-
   refs.modal.classList.remove('is-hidden');
 
   document.body.style.position = 'fixed';
- 
 
   createOneFilmCard(currentFilmCard);
 }
 
 function onGlideClick(e) {
   e.preventDefault();
-   document.body.style.overflow = 'hidden'
-  
+  document.body.style.overflow = 'hidden';
+
   currentFilm = e.target.closest('li');
 
   if (!currentFilm) return;

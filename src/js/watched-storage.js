@@ -21,7 +21,17 @@ function toWatchedFilms(e) {
     if (currentFilmCard !== null) {
       watchedFilms.push(currentFilmCard);
     }
+    if (refs.addToQueueBtn.textContent === 'remove from queue') {
+      const filmToRemuve = JSON.parse(load('queueFilmsStorage')).findIndex(
+        film => film.id === Number(chooseFilmId)
+      );
+      const newQueueFilmsStorage = JSON.parse(load('queueFilmsStorage'));
+      newQueueFilmsStorage.splice(filmToRemuve, 1);
+      save('queueFilmsStorage', JSON.stringify(newQueueFilmsStorage));
 
+      refs.addToQueueBtn.textContent = 'add to queue';
+      // createFilmCards();
+    }
     save('watchedFilmsStorage', JSON.stringify(watchedFilms));
 
     refs.addToWatchedBtn.textContent = 'remove from Watched';

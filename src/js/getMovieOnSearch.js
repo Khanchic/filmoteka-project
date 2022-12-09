@@ -38,7 +38,6 @@ export async function getMovie() {
         )
       );
     }
-    // console.log(response.data);
     return response.data;
   } catch (error) {
     error.message;
@@ -104,7 +103,7 @@ export function renderPhotos(data) {
 
       let cardGenres;
       if (!genre_ids) {
-        cardGenres = 'Сurrently unavailable';
+        cardGenres = 'Currently unavailable';
       } else {
         cardGenres = createGenresNamesForCard(genre_ids);
       }

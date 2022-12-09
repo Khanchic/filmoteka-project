@@ -93,7 +93,7 @@ function render(data) {
 
       let cardGenres;
       if (!genre_ids) {
-        cardGenres = 'Сurrently unavailable';
+        cardGenres = 'Currently unavailable';
       } else {
         cardGenres = createGenresNamesForCard(genre_ids);
       }
