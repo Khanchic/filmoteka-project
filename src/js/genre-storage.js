@@ -10,7 +10,6 @@ export function saveGenres() {
     .fetchQueryResultsForGenres()
     .then(genresData => {
       save(GENRES, genresData);
-      // console.log(genresData);
     })
     .catch(error => console.log(error));
 }
