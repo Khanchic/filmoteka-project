@@ -29,6 +29,7 @@
     z-index: 99;
     width: calc(100% - 80px);
     max-width: 976px;
+    min-width: 225px;
   }
 
   &__modal-close{
@@ -85,9 +86,15 @@
     overflow: hidden;
     border-radius: 10%;
 
-    @media screen and (min-width: 320px){
+    @media screen and (min-width: 360px){
       width: 200px;
       height: 200px;
+      margin-right: 0;
+    }
+
+    @media screen and (max-width: 359.9px) {
+      width: 150px;
+      height: 150px;
       margin-right: 0;
     }
   }
@@ -98,9 +105,15 @@
   }
   &__modal-team-discription h2{
     font-size: 20;
+    @media screen and (max-width: 360px) {
+      font-size: 14;
+    }
   }
   &__modal-team-discription h3{
     font-size: 14;
+    @media screen and (max-width: 360px) {
+      font-size: 10;
+    }
   }
 }
 
