@@ -21,7 +21,11 @@ function toQueueFilms(e) {
 
     if (currentFilmCard !== null) {
       queueFilms.push(currentFilmCard);
+      try {
+        createFilmCards();
+      } catch (error) {}
     }
+
     if (refs.addToWatchedBtn.textContent === 'remove from Watched') {
       const filmToRemuve = JSON.parse(load('watchedFilmsStorage')).findIndex(
         film => film.id === Number(chooseFilmId)
@@ -33,7 +37,9 @@ function toQueueFilms(e) {
       save('watchedFilmsStorage', JSON.stringify(newWatchedFilmsStorage));
 
       refs.addToWatchedBtn.textContent = 'add to Watched';
-      // createFilmCards();
+      try {
+        createFilmCards();
+      } catch (error) {}
     }
     save('queueFilmsStorage', JSON.stringify(queueFilms));
 
@@ -47,6 +53,8 @@ function toQueueFilms(e) {
     save('queueFilmsStorage', JSON.stringify(newQueueFilmsStorage));
 
     refs.addToQueueBtn.textContent = 'add to queue';
-    // createFilmCards();
+    try {
+      createFilmCards();
+    } catch (error) {}
   }
 }
