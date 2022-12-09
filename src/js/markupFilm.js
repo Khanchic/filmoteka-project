@@ -35,19 +35,24 @@ function createOneFilmCard({
   const filmInfo = `<div class="position" data-film-id=${id}>
       <h1 class="modal__title">${title}</h1>
       <table class="film-info__table">
-        <tr>
+        <tr class="film-info__item">
           <td>Vote / Votes</td>
           <td><span class="vote_average">${vote_average}</span> / <span class="vote_count">${vote_count}</span></td>
         </tr>
-        <tr>
+        <tr class="spacer"><td></td><td></td></tr>
+        <tr class="film-info__item">
           <td>Popularity</td>
           <td>${popularity}</td>
         </tr>
-        <tr>
+        <tr class="spacer"><td></td><td></td></tr>
+
+        <tr class="film-info__item">
           <td>Original Title</td>
           <td>${original_title}</td>
         </tr>
-        <tr>
+        <tr class="spacer"><td></td><td></td></tr>
+
+        <tr class="film-info__item">
           <td>Genre</td>
           <td>${cardGenres}</td>
         </tr>
