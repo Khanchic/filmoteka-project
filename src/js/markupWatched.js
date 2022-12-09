@@ -29,13 +29,15 @@ function createFilmCards() {
         } else {
           cardGenres = createGenresNamesForCard(genre_ids);
         }
+        const rating = vote_average.toFixed(1);
+
 
         return /*html*/ `<li class= "film-trending-container"><a class="film-trending__item" data-film-id=${id}>
         <img class= "film-trending__img" src="${imageUrl}" alt="${title}" loading="lazy" width="280px"
 		    height ="402px"/>
             <div class="film-info-for-card film-info">
                 <p class="film-name">${title}</p>
-                <p class="film-description__genre">${cardGenres} | <span class="film-description__release">${realeseYear}</span> <span class="vote_average">${vote_average}</span></p>
+                <p class="film-description__genre">${cardGenres} | <span class="film-description__release">${realeseYear}</span> <span class="vote_average">${rating }</span></p>
             </div>
         </a>
         </li>`;
@@ -47,4 +49,3 @@ function createFilmCards() {
 }
 
 export { createFilmCards };
-// createFilmCards();
