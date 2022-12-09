@@ -179,11 +179,13 @@
 // }
 
 .btn--modal {
+
+
   &:hover,
   &:focus {
-    background-color: #ff6b01;
     border-color: var(--accent-color);
-    color: #ffffff;
+    background-color: var(--accent-color); 
+    color: #ffffff
   }
 
   @include button-reset();
@@ -200,7 +202,9 @@
   min-width: 110px;
   min-height: 44px;
 
-  
+ 
+
+
   &:not(:last-child) {
     margin-right: 20px;
     @include tablet {
