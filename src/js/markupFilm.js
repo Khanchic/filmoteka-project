@@ -34,7 +34,7 @@ function createOneFilmCard({
   const filmImg = `<img class="img__cart" src="${imageUrl}" alt="${title}" loading="lazy" />`;
   const filmInfo = `<div class="position" data-film-id=${id}>
       <h1 class="modal__title">${title}</h1>
-      <table>
+      <table class="film-info__table">
         <tr>
           <td>Vote / Votes</td>
           <td><span class="vote_average">${vote_average}</span> / <span class="vote_count">${vote_count}</span></td>
