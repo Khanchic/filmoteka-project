@@ -57,9 +57,8 @@ function onFilmClick(e) {
   }
 
   refs.modal.classList.remove('is-hidden');
-  console.log(document.body.style.overflow);
+
   document.body.style.overflow = 'hidden';
-  console.log(document.body.style.overflow);
 
   // document.body.style.position = 'fixed';
 
