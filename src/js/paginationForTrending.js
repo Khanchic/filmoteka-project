@@ -85,7 +85,8 @@ function render(data) {
       let imageUrl = `https://image.tmdb.org/t/p/original${poster_path}`;
 
       if (poster_path === null) {
-        imageUrl = '../img/header-home2/no-picture-img-min.png';
+        imageUrl =
+          'https://s.studiobinder.com/wp-content/uploads/2019/06/Movie-Poster-Templates-StudioBinder.jpg';
       }
 
       let realeseYear = release_date.slice(0, 4);
@@ -108,5 +109,10 @@ function render(data) {
         </li>`;
     })
     .join('');
+
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
   refs.filmCards.insertAdjacentHTML('beforeend', markup);
 }
