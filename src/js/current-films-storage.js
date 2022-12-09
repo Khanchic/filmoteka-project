@@ -1,4 +1,4 @@
-import refs from './refs/links.js';
+import refs from './refs/links';
 import { createOneFilmCard } from './markupFilm.js';
 import { save, load } from './storage-methods';
 
@@ -18,7 +18,6 @@ let currentFilm = '';
 function onFilmClick(e) {
   e.preventDefault();
 
-  document.body.style.overflow = 'hidden';
   currentFilm = e.target.closest('a');
 
   if (!currentFilm) return;
@@ -58,15 +57,17 @@ function onFilmClick(e) {
   }
 
   refs.modal.classList.remove('is-hidden');
+  console.log(document.body.style.overflow);
+  document.body.style.overflow = 'hidden';
+  console.log(document.body.style.overflow);
 
-  document.body.style.position = 'fixed';
+  // document.body.style.position = 'fixed';
 
   createOneFilmCard(currentFilmCard);
 }
 
 function onGlideClick(e) {
   e.preventDefault();
-  document.body.style.overflow = 'hidden';
 
   currentFilm = e.target.closest('li');
 
@@ -101,6 +102,7 @@ function onGlideClick(e) {
   );
 
   refs.modal.classList.remove('is-hidden');
+  document.body.style.overflow = 'hidden';
 
   createOneFilmCard(currentFilmCard);
 }
