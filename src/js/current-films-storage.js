@@ -18,7 +18,6 @@ let currentFilm = '';
 function onFilmClick(e) {
   e.preventDefault();
 
- 
   document.body.style.overflow = 'hidden'
   currentFilm = e.target.closest('a');
 
@@ -56,14 +55,16 @@ function onFilmClick(e) {
 
   refs.modal.classList.remove('is-hidden');
 
+  document.body.style.position = 'fixed';
+ 
+
   createOneFilmCard(currentFilmCard);
 }
 
 function onGlideClick(e) {
   e.preventDefault();
-  refs.body.classList.toggle('no-scroll');
+   document.body.style.overflow = 'hidden'
   
-
   currentFilm = e.target.closest('li');
 
   if (!currentFilm) return;
