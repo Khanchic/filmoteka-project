@@ -24,7 +24,7 @@ function createFilmCards() {
         if (!genre_ids) {
           cardGenres = 'Currently unavailable';
         } else {
-          cardGenres = createGenresNamesForCard(genre_ids);
+          cardGenres = createGenresNamesForCard(genre_ids).trim();
         }
         const rating = vote_average.toFixed(1);
 
@@ -33,7 +33,7 @@ function createFilmCards() {
 		    height ="402px"/>
             <div class="film-info-for-card film-info">
                 <p class="film-name">${title}</p>
-                <p class="film-description__genre">${cardGenres} | <span class="film-description__release">${realeseYear}</span> <span class="vote_average">${rating}</span></p>
+                <p class="film-description__genre">${cardGenres} |<span class="film-description__release">${realeseYear}</span> <span class="vote_average">${rating}</span></p>
             </div>
         </a>
         </li>`;
