@@ -14,12 +14,19 @@ function createOneFilmCard({
 }) {
   let imageUrl = `https://image.tmdb.org/t/p/original${poster_path}`;
 
+  if (poster_path === null) {
+        imageUrl =
+          'https://s.studiobinder.com/wp-content/uploads/2019/06/Movie-Poster-Templates-StudioBinder.jpg';
+      }
   let cardGenres;
   if (!genre_ids) {
     cardGenres = 'Сurrently unavailable';
   } else {
     cardGenres = createGenresNamesForCard(genre_ids);
   }
+  const rating = vote_average.toFixed(1);
+  const popularityMark = popularity.toFixed(1);
+
 
   // <div class="modal container">
 
@@ -37,11 +44,11 @@ function createOneFilmCard({
       <table>
         <tr>
           <td>Vote / Votes</td>
-          <td><span class="vote_average">${vote_average}</span> / <span class="vote_count">${vote_count}</span></td>
+          <td><span class="vote_average">${rating}</span> / <span class="vote_count">${vote_count}</span></td>
         </tr>
         <tr>
           <td>Popularity</td>
-          <td>${popularity}</td>
+          <td>${popularityMark}</td>
         </tr>
         <tr>
           <td>Original Title</td>
